@@ -1,0 +1,1 @@
+if (!__STRING_K)__STRING_K=qbs_new(0,0);

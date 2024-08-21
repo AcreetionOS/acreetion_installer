@@ -1,0 +1,4 @@
+/home/darren/qb64/internal
+/home/darren/qb64/qb64-vscode
+/home/darren/qb64/licenses
+/home/darren/qb64/source
