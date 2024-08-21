@@ -185,9 +185,11 @@ print "Done."
 print
 print "Formating Partion EUFI"
 path$ = "mkfs.fat -F 32 /dev/"+dv$+"1"
+shell path$
 print "Done."
 print "Format Partion 2"
 path$ = "mkfs.ext4 /dev/"+dv$+"2"
+shell path$
 print "done."
 
 if homepart$="y" Then
