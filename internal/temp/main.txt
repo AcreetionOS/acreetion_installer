@@ -1,5 +1,8 @@
 S_0:;
 do{
+sub__dest(func__console());
+if(!qbevent)break;evnt(3);}while(r);
+do{
 sub_cls(NULL,NULL,0);
 if(!qbevent)break;evnt(5);}while(r);
 do{
@@ -67,9 +70,9 @@ skip6:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(20);}while(r);
-S_10:;
+S_11:;
 while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_NAME,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(24);if(r)goto S_10;}
+if(qbevent){evnt(24);if(r)goto S_11;}
 do{
 qbs_print(qbs_new_txt_len("Your name please? ",18),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -110,9 +113,9 @@ skip8:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(39);}while(r);
-S_19:;
+S_20:;
 while((qbs_cleanup(qbs_tmp_base,qbs_notequal(__STRING_PASS,__STRING_P2)))||new_error){
-if(qbevent){evnt(40);if(r)goto S_19;}
+if(qbevent){evnt(40);if(r)goto S_20;}
 do{
 qbs_print(qbs_new_txt_len("Password: ",10),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -153,9 +156,9 @@ if(!qbevent)break;evnt(57);}while(r);
 do{
 *__SINGLE_TT= 0 ;
 if(!qbevent)break;evnt(60);}while(r);
-S_27:;
+S_28:;
 while((~(func_eof( 1 )))||new_error){
-if(qbevent){evnt(62);if(r)goto S_27;}
+if(qbevent){evnt(62);if(r)goto S_28;}
 do{
 *__SINGLE_TT=*__SINGLE_TT+ 1 ;
 if(!qbevent)break;evnt(64);}while(r);
@@ -173,7 +176,7 @@ ww_exit_11:;
 do{
 sub_close( 1 ,1);
 if(!qbevent)break;evnt(69);}while(r);
-S_32:;
+S_33:;
 fornext_value14= 1 ;
 fornext_finalvalue14=*__SINGLE_TT;
 fornext_step14= 1 ;
@@ -190,7 +193,7 @@ if (fornext_value14<fornext_finalvalue14) break;
 if (fornext_value14>fornext_finalvalue14) break;
 }
 fornext_error14:;
-if(qbevent){evnt(73);if(r)goto S_32;}
+if(qbevent){evnt(73);if(r)goto S_33;}
 do{
 tmp_long=array_check((qbr(*__SINGLE_LP2))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5]);
 if (!new_error) qbs_set( ((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[tmp_long])),func_mid(((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_LP2))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])), 1 , 3 ,1));
@@ -218,9 +221,9 @@ if(!qbevent)break;evnt(83);}while(r);
 do{
 *__SINGLE_TT= 0 ;
 if(!qbevent)break;evnt(86);}while(r);
-S_39:;
+S_40:;
 while((~(func_eof( 1 )))||new_error){
-if(qbevent){evnt(88);if(r)goto S_39;}
+if(qbevent){evnt(88);if(r)goto S_40;}
 do{
 *__SINGLE_TT=*__SINGLE_TT+ 1 ;
 if(!qbevent)break;evnt(90);}while(r);
@@ -241,7 +244,7 @@ if(!qbevent)break;evnt(95);}while(r);
 do{
 *__SINGLE_LP2=*__SINGLE_LP2- 1 ;
 if(!qbevent)break;evnt(97);}while(r);
-S_45:;
+S_46:;
 fornext_value19= 1 ;
 fornext_finalvalue19=*__SINGLE_TT;
 fornext_step19= 1 ;
@@ -258,7 +261,7 @@ if (fornext_value19<fornext_finalvalue19) break;
 if (fornext_value19>fornext_finalvalue19) break;
 }
 fornext_error19:;
-if(qbevent){evnt(100);if(r)goto S_45;}
+if(qbevent){evnt(100);if(r)goto S_46;}
 do{
 tmp_long=array_check((qbr(*__SINGLE_T+*__SINGLE_LP2))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5]);
 if (!new_error) qbs_set( ((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[tmp_long])),qbs_left(((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_T))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])), 7 ));
@@ -326,7 +329,7 @@ skip24:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(118);}while(r);
-S_56:;
+S_57:;
 fornext_value26= 1 ;
 fornext_finalvalue26=*__SINGLE_TOTAL;
 fornext_step26= 1 ;
@@ -343,7 +346,7 @@ if (fornext_value26<fornext_finalvalue26) break;
 if (fornext_value26>fornext_finalvalue26) break;
 }
 fornext_error26:;
-if(qbevent){evnt(120);if(r)goto S_56;}
+if(qbevent){evnt(120);if(r)goto S_57;}
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_add(qbs_add(qbs_str((float)(*__SINGLE_XX)),qbs_new_txt_len("- ",2)),((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[array_check((qbr(*__SINGLE_XX))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5])]))));
@@ -365,9 +368,9 @@ skip28:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(126);}while(r);
-S_60:;
+S_61:;
 while(((-(*__SINGLE_SE< 1 ))|(-(((float)(*__SINGLE_SE))>((float)(*__SINGLE_TOTAL)))))||new_error){
-if(qbevent){evnt(128);if(r)goto S_60;}
+if(qbevent){evnt(128);if(r)goto S_61;}
 do{
 qbs_print(qbs_new_txt_len("Which Drive: ",13),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -394,9 +397,9 @@ skip30:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(137);}while(r);
-S_66:;
+S_67:;
 while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_II,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(138);if(r)goto S_66;}
+if(qbevent){evnt(138);if(r)goto S_67;}
 do{
 qbs_print(qbs_new_txt_len("Type Full Yes or No!   Are you 100 percent Sure? (Yes/No): ",59),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -412,9 +415,9 @@ do{
 qbs_set(__STRING_II,qbs_lcase(__STRING_II));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(142);}while(r);
-S_70:;
+S_71:;
 if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_II,qbs_new_txt_len("no",2))))||new_error){
-if(qbevent){evnt(144);if(r)goto S_70;}
+if(qbevent){evnt(144);if(r)goto S_71;}
 do{
 qbs_set(__STRING_II,qbs_new_txt_len("",0));
 qbs_cleanup(qbs_tmp_base,0);
@@ -427,9 +430,9 @@ do{
 qbs_set(__STRING_AA,qbs_new_txt_len("",0));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(153);}while(r);
-S_75:;
+S_76:;
 while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_AA,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(155);if(r)goto S_75;}
+if(qbevent){evnt(155);if(r)goto S_76;}
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
@@ -452,9 +455,9 @@ do{
 qbs_set(__STRING_AA,qbs_lcase(__STRING_AA));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(162);}while(r);
-S_80:;
+S_81:;
 if ((qbs_cleanup(qbs_tmp_base,(qbs_equal(__STRING_AA,qbs_new_txt_len("y",1)))|(qbs_equal(__STRING_AA,qbs_new_txt_len("yes",3)))))||new_error){
-if(qbevent){evnt(164);if(r)goto S_80;}
+if(qbevent){evnt(164);if(r)goto S_81;}
 do{
 qbs_set(__STRING_HOMEPART,qbs_new_txt_len("y",1));
 qbs_cleanup(qbs_tmp_base,0);
@@ -463,15 +466,18 @@ do{
 qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("parted -s /dev/",15),__STRING_DV),qbs_new_txt_len(" mklabel gpt mkpart primary 34 1000 mkpart primary 1001 100%",60)));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(166);}while(r);
-}else{
+}
+S_85:;
+if ((qbs_cleanup(qbs_tmp_base,(qbs_equal(__STRING_AA,qbs_new_txt_len("n",1)))|(qbs_equal(__STRING_AA,qbs_new_txt_len("no",2)))))||new_error){
+if(qbevent){evnt(169);if(r)goto S_85;}
 do{
 qbs_set(__STRING_HOMEPART,qbs_new_txt_len("n",1));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(169);}while(r);
+if(!qbevent)break;evnt(171);}while(r);
 do{
 qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("parted -s /dev/",15),__STRING_DV),qbs_new_txt_len(" mklabel gpt mkpart primary 34 1000 mkpart primary 1001 30% mkpart primary 30% 100%",83)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(170);}while(r);
+if(!qbevent)break;evnt(172);}while(r);
 }
 do{
 tqbs=qbs_new(0,0);
@@ -479,18 +485,18 @@ qbs_print(nothingstring,1);
 skip34:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(175);}while(r);
+if(!qbevent)break;evnt(176);}while(r);
 do{
 qbs_set(__STRING_PTNAME,qbs_new_txt_len("AcreetionOS",11));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(179);}while(r);
+if(!qbevent)break;evnt(180);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip35:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(181);}while(r);
+if(!qbevent)break;evnt(182);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Creating Partion now!",21));
@@ -501,11 +507,11 @@ qbs_print(nothingstring,1);
 skip36:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(182);}while(r);
+if(!qbevent)break;evnt(183);}while(r);
 do{
 sub_shell(__STRING_PATH,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(183);}while(r);
+if(!qbevent)break;evnt(184);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Done.",5));
@@ -516,14 +522,14 @@ qbs_print(nothingstring,1);
 skip37:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(184);}while(r);
+if(!qbevent)break;evnt(185);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip38:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(185);}while(r);
+if(!qbevent)break;evnt(186);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Formating Partion EUFI",22));
@@ -534,11 +540,15 @@ qbs_print(nothingstring,1);
 skip39:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(186);}while(r);
-do{
-qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.fat -F 32 /dev/",20),__STRING_DV),qbs_new_txt_len("1",1)));
-qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(187);}while(r);
+do{
+qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.fat -F 32 /dev/",20),__STRING_DV),qbs_new_txt_len("1 > null",8)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(188);}while(r);
+do{
+sub_shell(__STRING_PATH,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(189);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Done.",5));
@@ -549,7 +559,7 @@ qbs_print(nothingstring,1);
 skip40:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(188);}while(r);
+if(!qbevent)break;evnt(190);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Format Partion 2",16));
@@ -560,11 +570,15 @@ qbs_print(nothingstring,1);
 skip41:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(189);}while(r);
+if(!qbevent)break;evnt(191);}while(r);
 do{
-qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.ext4 /dev/",15),__STRING_DV),qbs_new_txt_len("2",1)));
+qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.ext4 -F /dev/",18),__STRING_DV),qbs_new_txt_len("2 > null",8)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(190);}while(r);
+if(!qbevent)break;evnt(192);}while(r);
+do{
+sub_shell(__STRING_PATH,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(193);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("done.",5));
@@ -575,10 +589,10 @@ qbs_print(nothingstring,1);
 skip42:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(191);}while(r);
-S_100:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_HOMEPART,qbs_new_txt_len("y",1))))||new_error){
-if(qbevent){evnt(193);if(r)goto S_100;}
+if(!qbevent)break;evnt(194);}while(r);
+S_104:;
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_HOMEPART,qbs_new_txt_len("n",1))))||new_error){
+if(qbevent){evnt(196);if(r)goto S_104;}
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Formating Partion Home",22));
@@ -589,15 +603,15 @@ qbs_print(nothingstring,1);
 skip43:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(194);}while(r);
+if(!qbevent)break;evnt(197);}while(r);
 do{
-qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.ext4 /dev/",15),__STRING_DV),qbs_new_txt_len("3",1)));
+qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.ext4 -F /dev/",18),__STRING_DV),qbs_new_txt_len("3 > null",8)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(195);}while(r);
+if(!qbevent)break;evnt(198);}while(r);
 do{
 sub_shell(__STRING_PATH,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(196);}while(r);
+if(!qbevent)break;evnt(199);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Done.",5));
@@ -608,7 +622,7 @@ qbs_print(nothingstring,1);
 skip44:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(197);}while(r);
+if(!qbevent)break;evnt(200);}while(r);
 }
 sub_end();
 return;

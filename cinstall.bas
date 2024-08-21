@@ -1,6 +1,6 @@
-Rem $ScreenHide
-Rem $Console
-Rem _Dest _Console
+$ScreenHide
+$Console
+_Dest _Console
 
 Cls
 
@@ -164,13 +164,14 @@ aa$ = LCase$(aa$)
 if aa$="y" or aa$="yes" Then
     homepart$="y"
     path$="parted -s /dev/"+dv$+" mklabel gpt mkpart primary 34 1000 mkpart primary 1001 100%"
-else
+end if
+
+if aa$="n" or aa$="no" then 
 
     homepart$="n"
     path$="parted -s /dev/"+dv$+" mklabel gpt mkpart primary 34 1000 mkpart primary 1001 30% mkpart primary 30% 100%"
 
 end if
-
 
 Print
 
@@ -184,17 +185,17 @@ shell path$
 print "Done."
 print
 print "Formating Partion EUFI"
-path$ = "mkfs.fat -F 32 /dev/"+dv$+"1"
+path$ = "mkfs.fat -F 32 /dev/"+dv$+"1 > null"
 shell path$
 print "Done."
 print "Format Partion 2"
-path$ = "mkfs.ext4 /dev/"+dv$+"2"
+path$ = "mkfs.ext4 -F /dev/"+dv$+"2 > null"
 shell path$
 print "done."
 
-if homepart$="y" Then
+if homepart$="n" Then
     print "Formating Partion Home"
-    path$="mkfs.ext4 /dev/"+dv$+"3"
+    path$="mkfs.ext4 -F /dev/"+dv$+"3 > null"
     shell path$
     print "Done."
 end if
