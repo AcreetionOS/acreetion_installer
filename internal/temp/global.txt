@@ -9,7 +9,6 @@ qbs *__STRING_FULLNAME=NULL;
 float *__SINGLE_XX=NULL;
 qbs *__STRING_PASS=NULL;
 qbs *__STRING_P2=NULL;
-qbs *__STRING_WHATEVER=NULL;
 float *__SINGLE_TT=NULL;
 float *__SINGLE_LP2=NULL;
 float *__SINGLE_T=NULL;

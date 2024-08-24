@@ -12,6 +12,8 @@ Dim drv$(500), drive$(100), zone$(1000), timezone$(25), dr$(25), part$(25)
 
 Cls
 
+ChDir "/root/"
+
 Print "Welcome to Acreetion OS!"
 Print
 Print "Written By: Darren W. Clift"
@@ -54,7 +56,7 @@ Shell "lsblk -Sr > temp.txt"
 
 Open "i", #1, "temp.txt"
 
-Line Input #1, whatever$
+Rem Line Input #1, whatever$
 
 
 tt = 0
@@ -80,7 +82,7 @@ Shell "lsblk -Nr > temp.txt"
 
 Open "i", #1, "temp.txt"
 
-Line Input #1, whatever$
+rem Line Input #1, whatever$
 
 
 tt = 0
@@ -150,7 +152,7 @@ End If
 
 Rem set up partitions.
 
-aa$=""
+aa$ = ""
 
 Do While aa$ = ""
 
@@ -161,43 +163,43 @@ Loop
 
 aa$ = LCase$(aa$)
 
-if aa$="y" or aa$="yes" Then
-    homepart$="y"
-    path$="parted -s /dev/"+dv$+" mklabel gpt mkpart primary 34 1000 mkpart primary 1001 100%"
-end if
+If aa$ = "y" Or aa$ = "yes" Then
+    homepart$ = "y"
+    path$ = "parted -s /dev/" + dv$ + " mklabel gpt mkpart primary 34 1000 mkpart primary 1001 100%"
+End If
 
-if aa$="n" or aa$="no" then 
+If aa$ = "n" Or aa$ = "no" Then
 
-    homepart$="n"
-    path$="parted -s /dev/"+dv$+" mklabel gpt mkpart primary 34 1000 mkpart primary 1001 30% mkpart primary 30% 100%"
+    homepart$ = "n"
+    path$ = "parted -s /dev/" + dv$ + " mklabel gpt mkpart primary 34 1000 mkpart primary 1001 30% mkpart primary 30% 100%"
 
-end if
+End If
 
 Print
 
-rem create partitions and wipe disk.
+Rem create partitions and wipe disk.
 
-ptname$="AcreetionOS"
+ptname$ = "AcreetionOS"
 
-print 
-print "Creating Partion now!"
-shell path$
-print "Done."
-print
-print "Formating Partion EUFI"
-path$ = "mkfs.fat -F 32 /dev/"+dv$+"1 > null"
-shell path$
-print "Done."
-print "Format Partion 2"
-path$ = "mkfs.ext4 -F /dev/"+dv$+"2 > null"
-shell path$
-print "done."
+Print
+Print "Creating Partion now!"
+Shell path$
+Print "Done."
+Print
+Print "Formating Partion EUFI"
+path$ = "mkfs.fat -F 32 /dev/" + dv$ + "1 > null"
+Shell path$
+Print "Done."
+Print "Format Partion 2"
+path$ = "mkfs.ext4 -F /dev/" + dv$ + "2 > null"
+Shell path$
+Print "done."
 
-if homepart$="n" Then
-    print "Formating Partion Home"
-    path$="mkfs.ext4 -F /dev/"+dv$+"3 > null"
-    shell path$
-    print "Done."
-end if
+If homepart$ = "n" Then
+    Print "Formating Partion Home"
+    path$ = "mkfs.ext4 -F /dev/" + dv$ + "3 > null"
+    Shell path$
+    Print "Done."
+End If
 
 

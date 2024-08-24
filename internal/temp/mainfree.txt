@@ -2,7 +2,6 @@ qbs_free(__STRING_NAME);
 qbs_free(__STRING_FULLNAME);
 qbs_free(__STRING_PASS);
 qbs_free(__STRING_P2);
-qbs_free(__STRING_WHATEVER);
 qbs_free(__STRING_AA);
 qbs_free(__STRING_DV);
 qbs_free(__STRING_II);
