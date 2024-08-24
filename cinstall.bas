@@ -187,7 +187,7 @@ Shell path$
 Print "Done."
 Print
 Print "Formating Partion EUFI"
-path$ = "mkfs.fat -F 32 /dev/" + dv$ + "1 set 1 esp on set 1 boot on > null"
+path$ = "mkfs.fat -F 32 /dev/" + dv$ + "1 > null"
 Shell path$
 Print "Done."
 Print "Format Partion 2"
@@ -204,9 +204,9 @@ End If
 
 Rem Install base system
 
-path3$ = "mount --mkdir /dev/" + dv$ + "1 /mnt/arch/"
+path3$ = "mount --mkdir /dev/" + dv$ + "2 /mnt/arch/"
 Shell path3$
-path4$ = "mount --mkdir /dev/" + dv$ + "2 /mnt/arch/boot/"
+path4$ = "mount --mkdir /dev/" + dv$ + "1 /mnt/arch/boot/"
 Shell parth4$
 If homepart$ = "n" Then
 
@@ -220,4 +220,9 @@ path2$ = "pacstrap -K /mnt/arch base linux-zen linux-firmware uranusinstaller ba
 
 Shell path2$
 
-End
+Rem make fstab file!
+
+Shell "mkdir /mnt/arch/etc"
+Shell "genfstab -U /mnt/arch"
+Rem Shell "/mnt/arch"
+

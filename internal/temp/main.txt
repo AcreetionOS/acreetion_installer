@@ -526,7 +526,7 @@ qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(189);}while(r);
 do{
-qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.fat -F 32 /dev/",20),__STRING_DV),qbs_new_txt_len("1 set 1 esp on set 1 boot on > null",35)));
+qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.fat -F 32 /dev/",20),__STRING_DV),qbs_new_txt_len("1 > null",8)));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(190);}while(r);
 do{
@@ -609,7 +609,7 @@ qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(202);}while(r);
 }
 do{
-qbs_set(__STRING_PATH3,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("1 /mnt/arch/",12)));
+qbs_set(__STRING_PATH3,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("2 /mnt/arch/",12)));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(207);}while(r);
 do{
@@ -617,7 +617,7 @@ sub_shell(__STRING_PATH3,1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(208);}while(r);
 do{
-qbs_set(__STRING_PATH4,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("2 /mnt/arch/boot/",17)));
+qbs_set(__STRING_PATH4,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("1 /mnt/arch/boot/",17)));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(209);}while(r);
 do{
@@ -645,8 +645,13 @@ sub_shell(__STRING_PATH2,1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(221);}while(r);
 do{
-sub_end();
-if(!qbevent)break;evnt(223);}while(r);
+sub_shell(qbs_new_txt_len("mkdir /mnt/arch/etc",19),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(225);}while(r);
+do{
+sub_shell(qbs_new_txt_len("genfstab -U /mnt/arch",21),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(226);}while(r);
 sub_end();
 return;
 }
