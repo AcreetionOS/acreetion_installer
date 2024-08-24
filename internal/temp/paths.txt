@@ -1,4 +1,5 @@
-/home/darren/qb64/internal
-/home/darren/qb64/qb64-vscode
-/home/darren/qb64/licenses
-/home/darren/qb64/source
+/home/darren/acreetion_installer/internal
+/home/darren/acreetion_installer/qb64-vscode
+/home/darren/acreetion_installer/licenses
+/home/darren/acreetion_installer/.git
+/home/darren/acreetion_installer/source

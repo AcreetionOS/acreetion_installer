@@ -1,11 +1,11 @@
-Creating filesystem with 10573824 4k blocks and 2646016 inodes
-Filesystem UUID: 5d18d743-0859-4424-a453-f4a7ba929e03
+Creating filesystem with 14861056 4k blocks and 3719168 inodes
+Filesystem UUID: 11ffc27d-bbb3-4177-842f-41747316bb61
 Superblock backups stored on blocks: 
 	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
-	4096000, 7962624
+	4096000, 7962624, 11239424
 
-Allocating group tables:   0/323       done                            
-Writing inode tables:   0/323       done                            
+Allocating group tables:   0/454       done                            
+Writing inode tables:   0/454       done                            
 Creating journal (65536 blocks): done
-Writing superblocks and filesystem accounting information:   0/323       done
+Writing superblocks and filesystem accounting information:   0/454       done
 
