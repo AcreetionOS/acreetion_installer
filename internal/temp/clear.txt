@@ -130,6 +130,5 @@ __STRING_PATH->len=0;
 __STRING_PTNAME->len=0;
 __STRING_PATH3->len=0;
 __STRING_PATH4->len=0;
-__STRING_PARTH4->len=0;
 __STRING_PATH5->len=0;
 __STRING_PATH2->len=0;

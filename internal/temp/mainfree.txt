@@ -10,6 +10,5 @@ qbs_free(__STRING_PATH);
 qbs_free(__STRING_PTNAME);
 qbs_free(__STRING_PATH3);
 qbs_free(__STRING_PATH4);
-qbs_free(__STRING_PARTH4);
 qbs_free(__STRING_PATH5);
 qbs_free(__STRING_PATH2);
