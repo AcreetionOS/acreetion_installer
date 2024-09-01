@@ -23,35 +23,12 @@ Rem ChDir "/root/"
 Print "Welcome to Acreetion OS!"
 Print
 Print "Written By: Darren W. Clift"
+Print "            Johnathan Spiva"
 Print
 Print "Copyright (c) 2024"
 Print
 
 Rem gather user info
-
-Do While name$ = ""
-    Line Input "Your name please? ", name$
-Loop
-
-fullname$ = LCase$(name$)
-
-xx = InStr(fullname$, " ")
-
-name$ = Mid$(fullname$, 1, xx)
-
-loop9:
-
-pass$ = "123"
-p2$ = "fcku"
-
-Print
-Do While pass$ <> p2$
-
-    Line Input "Password: ", pass$
-
-    Line Input "Verify Password: ", p2$
-
-Loop
 
 
 er1:
@@ -239,7 +216,11 @@ Rem make fstab file!
 Shell "mkdir /mnt/etc/"
 Shell "genfstab -U /mnt/"
 
-Shell "arch-chroot /mnt"
+Shell "cp /root/cinstall2 /mnt/usr/bin/cinstall2"
+Shell "chmod +x /mnt/user/bin/cinstall2"
+
+Shell "arch-chroot /mnt/ /usr/bin/cinstall2"
+
 Print
 Print "still in chroot"
 End

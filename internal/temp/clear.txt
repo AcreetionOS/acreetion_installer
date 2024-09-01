@@ -112,15 +112,11 @@ __ARRAY_STRING_PART[6]=0;
 __ARRAY_STRING_PART[0]=(ptrszint)&nothingstring;
 }
 }
-__STRING_NAME->len=0;
-__STRING_FULLNAME->len=0;
-*__SINGLE_XX=0;
-__STRING_PASS->len=0;
-__STRING_P2->len=0;
 *__SINGLE_TT=0;
 *__SINGLE_LP2=0;
 *__SINGLE_T=0;
 *__SINGLE_TOTAL=0;
+*__SINGLE_XX=0;
 *__SINGLE_SE=0;
 __STRING_AA->len=0;
 __STRING_DV->len=0;

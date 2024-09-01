@@ -83,6 +83,10 @@ qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(25);}while(r);
 do{
 tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("            Johnathan Spiva",27));
+if (new_error) goto skip7;
+makefit(tqbs);
+qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip7:
 qbs_free(tqbs);
@@ -90,10 +94,6 @@ qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(26);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Copyright (c) 2024",18));
-if (new_error) goto skip8;
-makefit(tqbs);
-qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip8:
 qbs_free(tqbs);
@@ -101,210 +101,178 @@ qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(27);}while(r);
 do{
 tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("Copyright (c) 2024",18));
+if (new_error) goto skip9;
+makefit(tqbs);
+qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip9:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(28);}while(r);
-S_16:;
-while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_NAME,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(32);if(r)goto S_16;}
-do{
-qbs_print(qbs_new_txt_len("Your name please? ",18),0);
-qbs_input_variabletypes[1]=ISSTRING+512;
-qbs_input_variableoffsets[1]=__STRING_NAME;
-qbs_input(1,1);
-if (stop_program) end();
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(33);}while(r);
-dl_continue_10:;
-}
-dl_exit_10:;
-do{
-qbs_set(__STRING_FULLNAME,qbs_lcase(__STRING_NAME));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(36);}while(r);
-do{
-*__SINGLE_XX=func_instr(NULL,__STRING_FULLNAME,qbs_new_txt_len(" ",1),0);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(38);}while(r);
-do{
-qbs_set(__STRING_NAME,func_mid(__STRING_FULLNAME, 1 ,qbr(*__SINGLE_XX),1));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(40);}while(r);
-LABEL_LOOP9:;
-if(qbevent){evnt(42);r=0;}
-do{
-qbs_set(__STRING_PASS,qbs_new_txt_len("123",3));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(44);}while(r);
-do{
-qbs_set(__STRING_P2,qbs_new_txt_len("fcku",4));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(45);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
-skip11:
+skip10:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(47);}while(r);
-S_25:;
-while((qbs_cleanup(qbs_tmp_base,qbs_notequal(__STRING_PASS,__STRING_P2)))||new_error){
-if(qbevent){evnt(48);if(r)goto S_25;}
-do{
-qbs_print(qbs_new_txt_len("Password: ",10),0);
-qbs_input_variabletypes[1]=ISSTRING+512;
-qbs_input_variableoffsets[1]=__STRING_PASS;
-qbs_input(1,1);
-if (stop_program) end();
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(50);}while(r);
-do{
-qbs_print(qbs_new_txt_len("Verify Password: ",17),0);
-qbs_input_variabletypes[1]=ISSTRING+512;
-qbs_input_variableoffsets[1]=__STRING_P2;
-qbs_input(1,1);
-if (stop_program) end();
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(52);}while(r);
-dl_continue_12:;
-}
-dl_exit_12:;
+if(!qbevent)break;evnt(29);}while(r);
 LABEL_ER1:;
-if(qbevent){evnt(57);r=0;}
+if(qbevent){evnt(34);r=0;}
 do{
 sub_shell(qbs_new_txt_len("lsblk -Sr > temp.txt",20),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(61);}while(r);
+if(!qbevent)break;evnt(38);}while(r);
 do{
 sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("temp.txt",8),NULL,0);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(63);}while(r);
+if(!qbevent)break;evnt(40);}while(r);
 do{
 *__SINGLE_TT= 0 ;
-if(!qbevent)break;evnt(68);}while(r);
-S_32:;
+if(!qbevent)break;evnt(45);}while(r);
+S_20:;
 while((~(func_eof( 1 )))||new_error){
-if(qbevent){evnt(70);if(r)goto S_32;}
+if(qbevent){evnt(47);if(r)goto S_20;}
 do{
 *__SINGLE_TT=*__SINGLE_TT+ 1 ;
-if(!qbevent)break;evnt(72);}while(r);
+if(!qbevent)break;evnt(49);}while(r);
 do{
 tmp_fileno= 1 ;
-if (new_error) goto skip14;
+if (new_error) goto skip12;
 sub_file_line_input_string(tmp_fileno,((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_TT))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])));
-if (new_error) goto skip14;
-skip14:
+if (new_error) goto skip12;
+skip12:
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(73);}while(r);
-ww_continue_13:;
+if(!qbevent)break;evnt(50);}while(r);
+ww_continue_11:;
 }
-ww_exit_13:;
+ww_exit_11:;
 do{
 sub_close( 1 ,1);
-if(!qbevent)break;evnt(77);}while(r);
-S_37:;
-fornext_value16= 1 ;
-fornext_finalvalue16=*__SINGLE_TT;
-fornext_step16= 1 ;
-if (fornext_step16<0) fornext_step_negative16=1; else fornext_step_negative16=0;
-if (new_error) goto fornext_error16;
-goto fornext_entrylabel16;
+if(!qbevent)break;evnt(54);}while(r);
+S_25:;
+fornext_value14= 1 ;
+fornext_finalvalue14=*__SINGLE_TT;
+fornext_step14= 1 ;
+if (fornext_step14<0) fornext_step_negative14=1; else fornext_step_negative14=0;
+if (new_error) goto fornext_error14;
+goto fornext_entrylabel14;
 while(1){
-fornext_value16=fornext_step16+(*__SINGLE_LP2);
-fornext_entrylabel16:
-*__SINGLE_LP2=fornext_value16;
-if (fornext_step_negative16){
-if (fornext_value16<fornext_finalvalue16) break;
+fornext_value14=fornext_step14+(*__SINGLE_LP2);
+fornext_entrylabel14:
+*__SINGLE_LP2=fornext_value14;
+if (fornext_step_negative14){
+if (fornext_value14<fornext_finalvalue14) break;
 }else{
-if (fornext_value16>fornext_finalvalue16) break;
+if (fornext_value14>fornext_finalvalue14) break;
 }
-fornext_error16:;
-if(qbevent){evnt(81);if(r)goto S_37;}
+fornext_error14:;
+if(qbevent){evnt(58);if(r)goto S_25;}
 do{
 tmp_long=array_check((qbr(*__SINGLE_LP2))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5]);
 if (!new_error) qbs_set( ((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[tmp_long])),func_mid(((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_LP2))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])), 1 , 3 ,1));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(83);}while(r);
-fornext_continue_15:;
+if(!qbevent)break;evnt(60);}while(r);
+fornext_continue_13:;
 }
-fornext_exit_15:;
+fornext_exit_13:;
 do{
 sub_shell(qbs_new_txt_len("lsblk -Nr > temp.txt",20),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(87);}while(r);
+if(!qbevent)break;evnt(64);}while(r);
 do{
 sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("temp.txt",8),NULL,0);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(89);}while(r);
+if(!qbevent)break;evnt(66);}while(r);
 do{
 *__SINGLE_TT= 0 ;
-if(!qbevent)break;evnt(94);}while(r);
-S_43:;
+if(!qbevent)break;evnt(71);}while(r);
+S_31:;
 while((~(func_eof( 1 )))||new_error){
-if(qbevent){evnt(96);if(r)goto S_43;}
+if(qbevent){evnt(73);if(r)goto S_31;}
 do{
 *__SINGLE_TT=*__SINGLE_TT+ 1 ;
-if(!qbevent)break;evnt(98);}while(r);
+if(!qbevent)break;evnt(75);}while(r);
 do{
 tmp_fileno= 1 ;
-if (new_error) goto skip18;
+if (new_error) goto skip16;
 sub_file_line_input_string(tmp_fileno,((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_TT))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])));
-if (new_error) goto skip18;
-skip18:
+if (new_error) goto skip16;
+skip16:
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(99);}while(r);
-ww_continue_17:;
+if(!qbevent)break;evnt(76);}while(r);
+ww_continue_15:;
 }
-ww_exit_17:;
+ww_exit_15:;
 do{
 sub_close( 1 ,1);
-if(!qbevent)break;evnt(103);}while(r);
+if(!qbevent)break;evnt(80);}while(r);
 do{
 *__SINGLE_LP2=*__SINGLE_LP2- 1 ;
-if(!qbevent)break;evnt(105);}while(r);
-S_49:;
-fornext_value20= 1 ;
-fornext_finalvalue20=*__SINGLE_TT;
-fornext_step20= 1 ;
-if (fornext_step20<0) fornext_step_negative20=1; else fornext_step_negative20=0;
-if (new_error) goto fornext_error20;
-goto fornext_entrylabel20;
+if(!qbevent)break;evnt(82);}while(r);
+S_37:;
+fornext_value18= 1 ;
+fornext_finalvalue18=*__SINGLE_TT;
+fornext_step18= 1 ;
+if (fornext_step18<0) fornext_step_negative18=1; else fornext_step_negative18=0;
+if (new_error) goto fornext_error18;
+goto fornext_entrylabel18;
 while(1){
-fornext_value20=fornext_step20+(*__SINGLE_T);
-fornext_entrylabel20:
-*__SINGLE_T=fornext_value20;
-if (fornext_step_negative20){
-if (fornext_value20<fornext_finalvalue20) break;
+fornext_value18=fornext_step18+(*__SINGLE_T);
+fornext_entrylabel18:
+*__SINGLE_T=fornext_value18;
+if (fornext_step_negative18){
+if (fornext_value18<fornext_finalvalue18) break;
 }else{
-if (fornext_value20>fornext_finalvalue20) break;
+if (fornext_value18>fornext_finalvalue18) break;
 }
-fornext_error20:;
-if(qbevent){evnt(108);if(r)goto S_49;}
+fornext_error18:;
+if(qbevent){evnt(85);if(r)goto S_37;}
 do{
 tmp_long=array_check((qbr(*__SINGLE_T+*__SINGLE_LP2))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5]);
 if (!new_error) qbs_set( ((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[tmp_long])),qbs_left(((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_T))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])), 7 ));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(110);}while(r);
-fornext_continue_19:;
+if(!qbevent)break;evnt(87);}while(r);
+fornext_continue_17:;
 }
-fornext_exit_19:;
+fornext_exit_17:;
 do{
 *__SINGLE_TOTAL=*__SINGLE_LP2+*__SINGLE_T- 1 ;
-if(!qbevent)break;evnt(114);}while(r);
+if(!qbevent)break;evnt(91);}while(r);
 do{
 sub_shell(qbs_new_txt_len("rm temp.txt",11),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(116);}while(r);
+if(!qbevent)break;evnt(93);}while(r);
 LABEL_LOOP99:;
-if(qbevent){evnt(118);r=0;}
+if(qbevent){evnt(95);r=0;}
 do{
 sub_cls(NULL,NULL,0);
-if(!qbevent)break;evnt(120);}while(r);
+if(!qbevent)break;evnt(97);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Choose Drive to install Acreetion OS on",39));
+if (new_error) goto skip19;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip19:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(99);}while(r);
+do{
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("**WARNING**: All Data On drive will be destroyed!",49));
+if (new_error) goto skip20;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip20:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(100);}while(r);
+do{
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("Including windows!!!!",21));
 if (new_error) goto skip21;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -312,85 +280,63 @@ qbs_print(nothingstring,1);
 skip21:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(122);}while(r);
+if(!qbevent)break;evnt(101);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("**WARNING**: All Data On drive will be destroyed!",49));
-if (new_error) goto skip22;
-makefit(tqbs);
-qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip22:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(123);}while(r);
+if(!qbevent)break;evnt(102);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Including windows!!!!",21));
-if (new_error) goto skip23;
-makefit(tqbs);
-qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip23:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(124);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_print(nothingstring,1);
-skip24:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(125);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_print(nothingstring,1);
-skip25:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(126);}while(r);
-S_60:;
-fornext_value27= 1 ;
-fornext_finalvalue27=*__SINGLE_TOTAL;
-fornext_step27= 1 ;
-if (fornext_step27<0) fornext_step_negative27=1; else fornext_step_negative27=0;
-if (new_error) goto fornext_error27;
-goto fornext_entrylabel27;
+if(!qbevent)break;evnt(103);}while(r);
+S_48:;
+fornext_value25= 1 ;
+fornext_finalvalue25=*__SINGLE_TOTAL;
+fornext_step25= 1 ;
+if (fornext_step25<0) fornext_step_negative25=1; else fornext_step_negative25=0;
+if (new_error) goto fornext_error25;
+goto fornext_entrylabel25;
 while(1){
-fornext_value27=fornext_step27+(*__SINGLE_XX);
-fornext_entrylabel27:
-*__SINGLE_XX=fornext_value27;
-if (fornext_step_negative27){
-if (fornext_value27<fornext_finalvalue27) break;
+fornext_value25=fornext_step25+(*__SINGLE_XX);
+fornext_entrylabel25:
+*__SINGLE_XX=fornext_value25;
+if (fornext_step_negative25){
+if (fornext_value25<fornext_finalvalue25) break;
 }else{
-if (fornext_value27>fornext_finalvalue27) break;
+if (fornext_value25>fornext_finalvalue25) break;
 }
-fornext_error27:;
-if(qbevent){evnt(128);if(r)goto S_60;}
+fornext_error25:;
+if(qbevent){evnt(105);if(r)goto S_48;}
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_add(qbs_add(qbs_str((float)(*__SINGLE_XX)),qbs_new_txt_len("- ",2)),((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[array_check((qbr(*__SINGLE_XX))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5])]))));
-if (new_error) goto skip28;
+if (new_error) goto skip26;
 makefit(tqbs);
 qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
-skip28:
+skip26:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(130);}while(r);
-fornext_continue_26:;
+if(!qbevent)break;evnt(107);}while(r);
+fornext_continue_24:;
 }
-fornext_exit_26:;
+fornext_exit_24:;
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
-skip29:
+skip27:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(134);}while(r);
-S_64:;
+if(!qbevent)break;evnt(111);}while(r);
+S_52:;
 while(((-(*__SINGLE_SE< 1 ))|(-(((float)(*__SINGLE_SE))>((float)(*__SINGLE_TOTAL)))))||new_error){
-if(qbevent){evnt(136);if(r)goto S_64;}
+if(qbevent){evnt(113);if(r)goto S_52;}
 do{
 qbs_print(qbs_new_txt_len("Which Drive: ",13),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -398,28 +344,28 @@ qbs_input_variableoffsets[1]=__STRING_AA;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(138);}while(r);
+if(!qbevent)break;evnt(115);}while(r);
 do{
 *__SINGLE_SE=func_val(__STRING_AA);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(139);}while(r);
-dl_continue_30:;
+if(!qbevent)break;evnt(116);}while(r);
+dl_continue_28:;
 }
-dl_exit_30:;
+dl_exit_28:;
 do{
 qbs_set(__STRING_DV,((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[array_check((qbr(*__SINGLE_SE))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5])])));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(143);}while(r);
+if(!qbevent)break;evnt(120);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
-skip31:
+skip29:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(145);}while(r);
-S_70:;
+if(!qbevent)break;evnt(122);}while(r);
+S_58:;
 while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_II,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(146);if(r)goto S_70;}
+if(qbevent){evnt(123);if(r)goto S_58;}
 do{
 qbs_print(qbs_new_txt_len("Type Full Yes or No!   Are you 100 percent Sure? (Yes/No): ",59),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -427,39 +373,39 @@ qbs_input_variableoffsets[1]=__STRING_II;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(147);}while(r);
-dl_continue_32:;
+if(!qbevent)break;evnt(124);}while(r);
+dl_continue_30:;
 }
-dl_exit_32:;
+dl_exit_30:;
 do{
 qbs_set(__STRING_II,qbs_lcase(__STRING_II));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(150);}while(r);
-S_74:;
+if(!qbevent)break;evnt(127);}while(r);
+S_62:;
 if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_II,qbs_new_txt_len("no",2))))||new_error){
-if(qbevent){evnt(152);if(r)goto S_74;}
+if(qbevent){evnt(129);if(r)goto S_62;}
 do{
 qbs_set(__STRING_II,qbs_new_txt_len("",0));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(153);}while(r);
+if(!qbevent)break;evnt(130);}while(r);
 do{
 goto LABEL_LOOP99;
-if(!qbevent)break;evnt(154);}while(r);
+if(!qbevent)break;evnt(131);}while(r);
 }
 do{
 qbs_set(__STRING_AA,qbs_new_txt_len("",0));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(161);}while(r);
-S_79:;
+if(!qbevent)break;evnt(138);}while(r);
+S_67:;
 while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_AA,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(163);if(r)goto S_79;}
+if(qbevent){evnt(140);if(r)goto S_67;}
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
-skip34:
+skip32:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(165);}while(r);
+if(!qbevent)break;evnt(142);}while(r);
 do{
 qbs_print(qbs_new_txt_len("Do you want your home director in root? (Yes/No): ",50),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -467,59 +413,85 @@ qbs_input_variableoffsets[1]=__STRING_AA;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(166);}while(r);
-dl_continue_33:;
+if(!qbevent)break;evnt(143);}while(r);
+dl_continue_31:;
 }
-dl_exit_33:;
+dl_exit_31:;
 do{
 qbs_set(__STRING_AA,qbs_lcase(__STRING_AA));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(170);}while(r);
-S_84:;
+if(!qbevent)break;evnt(147);}while(r);
+S_72:;
 if ((qbs_cleanup(qbs_tmp_base,(qbs_equal(__STRING_AA,qbs_new_txt_len("y",1)))|(qbs_equal(__STRING_AA,qbs_new_txt_len("yes",3)))))||new_error){
-if(qbevent){evnt(172);if(r)goto S_84;}
+if(qbevent){evnt(149);if(r)goto S_72;}
 do{
 qbs_set(__STRING_HOMEPART,qbs_new_txt_len("y",1));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(173);}while(r);
+if(!qbevent)break;evnt(150);}while(r);
 do{
 qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("parted -s /dev/",15),__STRING_DV),qbs_new_txt_len(" mklabel gpt mkpart primary 34 1000 mkpart primary 1001 100%",60)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(174);}while(r);
+if(!qbevent)break;evnt(151);}while(r);
 }
-S_88:;
+S_76:;
 if ((qbs_cleanup(qbs_tmp_base,(qbs_equal(__STRING_AA,qbs_new_txt_len("n",1)))|(qbs_equal(__STRING_AA,qbs_new_txt_len("no",2)))))||new_error){
-if(qbevent){evnt(177);if(r)goto S_88;}
+if(qbevent){evnt(154);if(r)goto S_76;}
 do{
 qbs_set(__STRING_HOMEPART,qbs_new_txt_len("n",1));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(179);}while(r);
+if(!qbevent)break;evnt(156);}while(r);
 do{
 qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("parted -s /dev/",15),__STRING_DV),qbs_new_txt_len(" mklabel gpt mkpart primary 34 1000 mkpart primary 1001 30% mkpart primary 30% 100%",83)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(180);}while(r);
+if(!qbevent)break;evnt(157);}while(r);
 }
 do{
 tqbs=qbs_new(0,0);
+qbs_print(nothingstring,1);
+skip33:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(161);}while(r);
+do{
+qbs_set(__STRING_PTNAME,qbs_new_txt_len("AcreetionOS",11));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(165);}while(r);
+do{
+tqbs=qbs_new(0,0);
+qbs_print(nothingstring,1);
+skip34:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(167);}while(r);
+do{
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("Creating Partion now!",21));
+if (new_error) goto skip35;
+makefit(tqbs);
+qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip35:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(184);}while(r);
-do{
-qbs_set(__STRING_PTNAME,qbs_new_txt_len("AcreetionOS",11));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(188);}while(r);
+if(!qbevent)break;evnt(168);}while(r);
 do{
 tqbs=qbs_new(0,0);
+qbs_set(tqbs,__STRING_PATH);
+if (new_error) goto skip36;
+makefit(tqbs);
+qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip36:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(190);}while(r);
+if(!qbevent)break;evnt(169);}while(r);
+do{
+sub_shell(__STRING_PATH,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(170);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Creating Partion now!",21));
+qbs_set(tqbs,qbs_new_txt_len("Done.",5));
 if (new_error) goto skip37;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -527,25 +499,17 @@ qbs_print(nothingstring,1);
 skip37:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(191);}while(r);
+if(!qbevent)break;evnt(171);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,__STRING_PATH);
-if (new_error) goto skip38;
-makefit(tqbs);
-qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip38:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(192);}while(r);
-do{
-sub_shell(__STRING_PATH,1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(193);}while(r);
+if(!qbevent)break;evnt(172);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Done.",5));
+qbs_set(tqbs,qbs_new_txt_len("Formating Partion EUFI",22));
 if (new_error) goto skip39;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -553,17 +517,29 @@ qbs_print(nothingstring,1);
 skip39:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(194);}while(r);
+if(!qbevent)break;evnt(173);}while(r);
+do{
+qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.fat -F 32 /dev/",20),__STRING_DV),qbs_new_txt_len("1 > null",8)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(174);}while(r);
 do{
 tqbs=qbs_new(0,0);
+qbs_set(tqbs,__STRING_PATH);
+if (new_error) goto skip40;
+makefit(tqbs);
+qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip40:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(195);}while(r);
+if(!qbevent)break;evnt(175);}while(r);
+do{
+sub_shell(__STRING_PATH,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(176);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Formating Partion EUFI",22));
+qbs_set(tqbs,qbs_new_txt_len("Done.",5));
 if (new_error) goto skip41;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -571,14 +547,10 @@ qbs_print(nothingstring,1);
 skip41:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(196);}while(r);
-do{
-qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.fat -F 32 /dev/",20),__STRING_DV),qbs_new_txt_len("1 > null",8)));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(197);}while(r);
+if(!qbevent)break;evnt(177);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,__STRING_PATH);
+qbs_set(tqbs,qbs_new_txt_len("Format Partion 2",16));
 if (new_error) goto skip42;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -586,14 +558,18 @@ qbs_print(nothingstring,1);
 skip42:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(198);}while(r);
+if(!qbevent)break;evnt(178);}while(r);
+do{
+qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.ext4 -F /dev/",18),__STRING_DV),qbs_new_txt_len("2 > null",8)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(179);}while(r);
 do{
 sub_shell(__STRING_PATH,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(199);}while(r);
+if(!qbevent)break;evnt(180);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Done.",5));
+qbs_set(tqbs,qbs_new_txt_len("done.",5));
 if (new_error) goto skip43;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -601,10 +577,13 @@ qbs_print(nothingstring,1);
 skip43:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(200);}while(r);
+if(!qbevent)break;evnt(181);}while(r);
+S_97:;
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_HOMEPART,qbs_new_txt_len("n",1))))||new_error){
+if(qbevent){evnt(183);if(r)goto S_97;}
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Format Partion 2",16));
+qbs_set(tqbs,qbs_new_txt_len("Formating Partion Home",22));
 if (new_error) goto skip44;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -612,18 +591,18 @@ qbs_print(nothingstring,1);
 skip44:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(201);}while(r);
+if(!qbevent)break;evnt(184);}while(r);
 do{
-qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.ext4 -F /dev/",18),__STRING_DV),qbs_new_txt_len("2 > null",8)));
+qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.ext4 -F /dev/",18),__STRING_DV),qbs_new_txt_len("3 > null",8)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(202);}while(r);
+if(!qbevent)break;evnt(185);}while(r);
 do{
 sub_shell(__STRING_PATH,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(203);}while(r);
+if(!qbevent)break;evnt(186);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("done.",5));
+qbs_set(tqbs,qbs_new_txt_len("Done.",5));
 if (new_error) goto skip45;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -631,13 +610,15 @@ qbs_print(nothingstring,1);
 skip45:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(204);}while(r);
-S_109:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_HOMEPART,qbs_new_txt_len("n",1))))||new_error){
-if(qbevent){evnt(206);if(r)goto S_109;}
+if(!qbevent)break;evnt(187);}while(r);
+}
+do{
+qbs_set(__STRING_PATH3,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("2 /mnt/",7)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(192);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Formating Partion Home",22));
+qbs_set(tqbs,__STRING_PATH3);
 if (new_error) goto skip46;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -645,18 +626,18 @@ qbs_print(nothingstring,1);
 skip46:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(207);}while(r);
+if(!qbevent)break;evnt(193);}while(r);
 do{
-qbs_set(__STRING_PATH,qbs_add(qbs_add(qbs_new_txt_len("mkfs.ext4 -F /dev/",18),__STRING_DV),qbs_new_txt_len("3 > null",8)));
+sub_shell(__STRING_PATH3,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(208);}while(r);
+if(!qbevent)break;evnt(194);}while(r);
 do{
-sub_shell(__STRING_PATH,1);
+qbs_set(__STRING_PATH4,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("1 /mnt/boot",11)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(209);}while(r);
+if(!qbevent)break;evnt(195);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Done.",5));
+qbs_set(tqbs,__STRING_PATH4);
 if (new_error) goto skip47;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -664,15 +645,21 @@ qbs_print(nothingstring,1);
 skip47:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(210);}while(r);
-}
+if(!qbevent)break;evnt(196);}while(r);
 do{
-qbs_set(__STRING_PATH3,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("2 /mnt/",7)));
+sub_shell(__STRING_PATH4,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(215);}while(r);
+if(!qbevent)break;evnt(197);}while(r);
+S_109:;
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_HOMEPART,qbs_new_txt_len("n",1))))||new_error){
+if(qbevent){evnt(198);if(r)goto S_109;}
+do{
+qbs_set(__STRING_PATH5,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("3 /mnt/home",11)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(200);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,__STRING_PATH3);
+qbs_set(tqbs,__STRING_PATH5);
 if (new_error) goto skip48;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -680,40 +667,58 @@ qbs_print(nothingstring,1);
 skip48:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(201);}while(r);
+do{
+sub_shell(__STRING_PATH5,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(202);}while(r);
+}
+do{
+sub_shell(qbs_new_txt_len("mkdir /mnt/usr/bin/",19),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(206);}while(r);
+do{
+sub_shell(qbs_new_txt_len("cp /usr/bin/zone /mnt/usr/bin/",30),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(207);}while(r);
+do{
+qbs_set(__STRING_PATH2,qbs_new_txt_len("pacstrap -K /mnt base linux-zen linux-firmware uranusinstaller base-devel nano dhcpcd abiword adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts alsa-firmware alsa-plugins alsa-utils amd-ucode android-tools android-udev appstream appstream-glib appstream-qt appstream-qt5 arc-gtk-theme arc-icon-theme arc-solid-gtk-theme arch-install-scripts archinstall arch-audit archiso archivetools archlinux-appstream-data archlinux-contrib archlinux-keyring archlinux-wallpaper ardour aria2 aspell audacity axel b43-fwcutter base base-devel bash bash-completion bcachefs-tools bind bison bitwarden blender blueberry bluefish bluez bluez-utils bolt breeze-gtk breeze-icons brltty broadcom-wl #broadwell-wl-dkms btrfs-progs calamares calibre cantarell-fonts cheese chromium cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cinnamon-translations ckbcomp clamav clamtk clonezilla cloud-init coreutils cpio cryptsetup #cuda #cuda-tools cups cups-browsed cups-filters cups-pdf cups-pk-helper curl curl-rustls darkhttpd darktable dart dbus dbus-docs dbus-glib dbxtool dconf dconf-editor ddgr ddrescue deja-dup deluge-gtk desktop-file-utils device-mapper dhclient dhcpcd dialog diffutils directx-headers discord distrobox dmidecode dmraid dnsmasq docker docker-buildx docker-compose docker-machine docker-scan downgrade dosfstools dracut duf e2fsprogs exfatprogs edk2-shell efibootmgr efitools element-desktop emacs-wayland endeavouros-mirrorlist endeavouros-keyring epiphany espeakup ethtool exfatprogs f2fs-tools fakeroot fastfetch fatresize ffmpeg ffmpegthumbs firewalld freetype2 nemo-terminal file-roller filezilla flatpak flatpak-builder flatpak-docs flatpak-xdg-utils font-manager foot-terminfo fsarchiver fuse2 fuse3 fwupd fwupd-docs fwupd-efi gamemode gcc gcc-libs gdm gedit gedit-plugins gimp gimp-nufraw gimp-plugin-gmic git glances gnome-keyring gnome-screenshot gnome-shell gnu-netcat gpart gparted gpm gptfdisk grml-zsh-config grub grsync gsfonts gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-ugly gtk3 gtk4 gtkspell guake guvcview handbrake haveged hdparm hwdata hwdetect hwinfo hyperv ifuse img2pdf inetutils intel-compute-runtime intel-gmmlib intel-graphics-compiler intel-graphics-compiler intel-media-driver intel-ucode intel-undervolt inxi iptables-nft irssi iw iwd jdk17-openjdk jfsutils jre-openjdk jre21-openjdk kitty kitty-terminfo kodi ldns leafpad less lftp libadwaita libadwaita-docs libdvdcss libfido2 libgsf libopenraw libsmbios libusb-compat libva-intel-driver libva-mesa-driver libva-utils libva-vdpau-driver libvirt libvirt-glib linux-atm linux-firmware linux-firmware-marvell linux-zen linux-zen-docs linux-zen-headers livecd-sounds llvm logrotate lsb-release lsscsi lvm2 lynx lz4 man-db man-pages metacity mc mdadm meld memtest86+ memtest86+-efi mesa mesa-utils mesa-vdpau meson mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mtools nano nano-syntax-highlighting nemo-emblems nemo-fileroller nemo-pastebin nemo-preview nemo-python nemo-qml-plugin-configuration nemo-qml-plugin-notifications nemo-seahorse nemo-share networkmanager networkmanager-openconnect networkmanager-openvpn nextcloud nextcloud-app-bookmarks nextcloud-app-calendar nextcloud-app-contacts nextcloud-app-deck nextcloud-app-mail nextcloud-app-news nextcloud-app-notes nextcloud-app-notify_push nextcloud-app-spreed nextcloud-app-tasks nextcloud-client nbd ndisc6 net-tools netctl nfs-utils nftables nilfs-utils nmap noto-fonts noto-fonts-emoji noto-fonts-extra npm nss-mdns ntfs-3g ntp nvidia nvidia-inst nvidia-utils nvme-cli open-iscsi open-vm-tools openconnect openh264 openpgp-card-tools openimagedenoise openssh openssl openvpn os-prober pacman-contrib partclone parted partimage partitionmanager pavucontrol pcsclite pdfgrep perl nemo-image-converter persepolis pipewire pipewire-alsa pipewire-audio pipewire-docs pipewire-ffado pipewire-jack pipewire-pulse pipewire-roc pipewire-session-manager pipewire-v4l2 pipewire-x11-bell pipewire-zeroconf pkgfile podman polkit-gnome poppler-glib power-profiles-daemon ppp pptpclient psensor python-capng python-packaging python-pyqt5 pv qemu-guest-agent rate-mirrors rebuild-detector reflector reflector-simple reiserfsprogs rp-pppoe rsync rnnoise rtkit rxvt-unicode-terminfo screen screengrab sdparm sequoia-sq sg3_utils smartmontools s-nail sof-firmware spice-vdagent squashfs-tools stress-ng sudo sysfsutils syslinux system-config-printer systemd-resolvconf systemd-sysvcompat tcpdump terminus-font testdisk texinfo thermald thunderbird thunderbird-ublock-origin tldr touchegg tmux tpm2-tools tpm2-tss ttf-bitstream-vera ttf-dejavu ttf-liberation ttf-opensans udftools ukui-wallpapers unrar unzip usb_modeswitch usbmuxd usbutils vi vim vkd3d virtualbox-guest-utils vpnc vulkan-intel vulkan-mesa-layers vulkan-radeon vulkan-swrast vulkan-virtio warpinator webrtc-audio-processing welcome which wireless-regdb wireless_tools wireplumber wpa_supplicant wvdial x265 x42-plugins xdg-user-dirs xdg-utils xed xf86-input-libinput xf86-video-amdgpu xf86-video-ati xf86-video-intel xf86-video-qxl xf86-input-vmmouse xf86-video-vmware xfsprogs xl2tpd xorg-server xorg-xdpyinfo xorg-xinit xorg-xinput xorg-xkill xorg-xrandr xorg-xwayland xz yay zsh",5313));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(210);}while(r);
+do{
+sub_shell(__STRING_PATH2,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(212);}while(r);
+do{
+sub_shell(qbs_new_txt_len("mkdir /mnt/etc/",15),1);
+qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(216);}while(r);
 do{
-sub_shell(__STRING_PATH3,1);
+sub_shell(qbs_new_txt_len("genfstab -U /mnt/",17),1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(217);}while(r);
 do{
-qbs_set(__STRING_PATH4,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("1 /mnt/boot",11)));
+sub_shell(qbs_new_txt_len("cp /root/cinstall2 /mnt/usr/bin/cinstall2",41),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(218);}while(r);
+if(!qbevent)break;evnt(219);}while(r);
+do{
+sub_shell(qbs_new_txt_len("chmod +x /mnt/user/bin/cinstall2",32),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(220);}while(r);
+do{
+sub_shell(qbs_new_txt_len("arch-chroot /mnt/ /usr/bin/cinstall2",36),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(222);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,__STRING_PATH4);
-if (new_error) goto skip49;
-makefit(tqbs);
-qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip49:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(219);}while(r);
-do{
-sub_shell(__STRING_PATH4,1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(220);}while(r);
-S_121:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_HOMEPART,qbs_new_txt_len("n",1))))||new_error){
-if(qbevent){evnt(221);if(r)goto S_121;}
-do{
-qbs_set(__STRING_PATH5,qbs_add(qbs_add(qbs_new_txt_len("mount --mkdir /dev/",19),__STRING_DV),qbs_new_txt_len("3 /mnt/home",11)));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(223);}while(r);
+if(!qbevent)break;evnt(224);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,__STRING_PATH5);
+qbs_set(tqbs,qbs_new_txt_len("still in chroot",15));
 if (new_error) goto skip50;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -721,61 +726,10 @@ qbs_print(nothingstring,1);
 skip50:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(224);}while(r);
-do{
-sub_shell(__STRING_PATH5,1);
-qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(225);}while(r);
-}
-do{
-sub_shell(qbs_new_txt_len("mkdir /mnt/usr/bin/",19),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(229);}while(r);
-do{
-sub_shell(qbs_new_txt_len("cp /usr/bin/zone /mnt/usr/bin/",30),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(230);}while(r);
-do{
-qbs_set(__STRING_PATH2,qbs_new_txt_len("pacstrap -K /mnt base linux-zen linux-firmware uranusinstaller base-devel nano dhcpcd abiword adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts alsa-firmware alsa-plugins alsa-utils amd-ucode android-tools android-udev appstream appstream-glib appstream-qt appstream-qt5 arc-gtk-theme arc-icon-theme arc-solid-gtk-theme arch-install-scripts archinstall arch-audit archiso archivetools archlinux-appstream-data archlinux-contrib archlinux-keyring archlinux-wallpaper ardour aria2 aspell audacity axel b43-fwcutter base base-devel bash bash-completion bcachefs-tools bind bison bitwarden blender blueberry bluefish bluez bluez-utils bolt breeze-gtk breeze-icons brltty broadcom-wl #broadwell-wl-dkms btrfs-progs calamares calibre cantarell-fonts cheese chromium cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cinnamon-translations ckbcomp clamav clamtk clonezilla cloud-init coreutils cpio cryptsetup #cuda #cuda-tools cups cups-browsed cups-filters cups-pdf cups-pk-helper curl curl-rustls darkhttpd darktable dart dbus dbus-docs dbus-glib dbxtool dconf dconf-editor ddgr ddrescue deja-dup deluge-gtk desktop-file-utils device-mapper dhclient dhcpcd dialog diffutils directx-headers discord distrobox dmidecode dmraid dnsmasq docker docker-buildx docker-compose docker-machine docker-scan downgrade dosfstools dracut duf e2fsprogs exfatprogs edk2-shell efibootmgr efitools element-desktop emacs-wayland endeavouros-mirrorlist endeavouros-keyring epiphany espeakup ethtool exfatprogs f2fs-tools fakeroot fastfetch fatresize ffmpeg ffmpegthumbs firewalld freetype2 nemo-terminal file-roller filezilla flatpak flatpak-builder flatpak-docs flatpak-xdg-utils font-manager foot-terminfo fsarchiver fuse2 fuse3 fwupd fwupd-docs fwupd-efi gamemode gcc gcc-libs gdm gedit gedit-plugins gimp gimp-nufraw gimp-plugin-gmic git glances gnome-keyring gnome-screenshot gnome-shell gnu-netcat gpart gparted gpm gptfdisk grml-zsh-config grub grsync gsfonts gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-ugly gtk3 gtk4 gtkspell guake guvcview handbrake haveged hdparm hwdata hwdetect hwinfo hyperv ifuse img2pdf inetutils intel-compute-runtime intel-gmmlib intel-graphics-compiler intel-graphics-compiler intel-media-driver intel-ucode intel-undervolt inxi iptables-nft irssi iw iwd jdk17-openjdk jfsutils jre-openjdk jre21-openjdk kitty kitty-terminfo kodi ldns leafpad less lftp libadwaita libadwaita-docs libdvdcss libfido2 libgsf libopenraw libsmbios libusb-compat libva-intel-driver libva-mesa-driver libva-utils libva-vdpau-driver libvirt libvirt-glib linux-atm linux-firmware linux-firmware-marvell linux-zen linux-zen-docs linux-zen-headers livecd-sounds llvm logrotate lsb-release lsscsi lvm2 lynx lz4 man-db man-pages metacity mc mdadm meld memtest86+ memtest86+-efi mesa mesa-utils mesa-vdpau meson mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mtools nano nano-syntax-highlighting nemo-emblems nemo-fileroller nemo-pastebin nemo-preview nemo-python nemo-qml-plugin-configuration nemo-qml-plugin-notifications nemo-seahorse nemo-share networkmanager networkmanager-openconnect networkmanager-openvpn nextcloud nextcloud-app-bookmarks nextcloud-app-calendar nextcloud-app-contacts nextcloud-app-deck nextcloud-app-mail nextcloud-app-news nextcloud-app-notes nextcloud-app-notify_push nextcloud-app-spreed nextcloud-app-tasks nextcloud-client nbd ndisc6 net-tools netctl nfs-utils nftables nilfs-utils nmap noto-fonts noto-fonts-emoji noto-fonts-extra npm nss-mdns ntfs-3g ntp nvidia nvidia-inst nvidia-utils nvme-cli open-iscsi open-vm-tools openconnect openh264 openpgp-card-tools openimagedenoise openssh openssl openvpn os-prober pacman-contrib partclone parted partimage partitionmanager pavucontrol pcsclite pdfgrep perl nemo-image-converter persepolis pipewire pipewire-alsa pipewire-audio pipewire-docs pipewire-ffado pipewire-jack pipewire-pulse pipewire-roc pipewire-session-manager pipewire-v4l2 pipewire-x11-bell pipewire-zeroconf pkgfile podman polkit-gnome poppler-glib power-profiles-daemon ppp pptpclient psensor python-capng python-packaging python-pyqt5 pv qemu-guest-agent rate-mirrors rebuild-detector reflector reflector-simple reiserfsprogs rp-pppoe rsync rnnoise rtkit rxvt-unicode-terminfo screen screengrab sdparm sequoia-sq sg3_utils smartmontools s-nail sof-firmware spice-vdagent squashfs-tools stress-ng sudo sysfsutils syslinux system-config-printer systemd-resolvconf systemd-sysvcompat tcpdump terminus-font testdisk texinfo thermald thunderbird thunderbird-ublock-origin tldr touchegg tmux tpm2-tools tpm2-tss ttf-bitstream-vera ttf-dejavu ttf-liberation ttf-opensans udftools ukui-wallpapers unrar unzip usb_modeswitch usbmuxd usbutils vi vim vkd3d virtualbox-guest-utils vpnc vulkan-intel vulkan-mesa-layers vulkan-radeon vulkan-swrast vulkan-virtio warpinator webrtc-audio-processing welcome which wireless-regdb wireless_tools wireplumber wpa_supplicant wvdial x265 x42-plugins xdg-user-dirs xdg-utils xed xf86-input-libinput xf86-video-amdgpu xf86-video-ati xf86-video-intel xf86-video-qxl xf86-input-vmmouse xf86-video-vmware xfsprogs xl2tpd xorg-server xorg-xdpyinfo xorg-xinit xorg-xinput xorg-xkill xorg-xrandr xorg-xwayland xz yay zsh",5313));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(233);}while(r);
-do{
-sub_shell(__STRING_PATH2,1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(235);}while(r);
-do{
-sub_shell(qbs_new_txt_len("mkdir /mnt/etc/",15),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(239);}while(r);
-do{
-sub_shell(qbs_new_txt_len("genfstab -U /mnt/",17),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(240);}while(r);
-do{
-sub_shell(qbs_new_txt_len("arch-chroot /mnt",16),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(242);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_print(nothingstring,1);
-skip51:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(243);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("still in chroot",15));
-if (new_error) goto skip52;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip52:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(244);}while(r);
 do{
 sub_end();
-if(!qbevent)break;evnt(245);}while(r);
+if(!qbevent)break;evnt(226);}while(r);
 sub_end();
 return;
 }
