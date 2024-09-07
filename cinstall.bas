@@ -58,6 +58,7 @@ Rem break up into variables
 For lp2 = 1 To tt
 
     drv$(lp2) = Mid$(dr$(lp2), 1, 3)
+    drv2$(lp2) = dr$(lp2)
 
 Next lp2
 
@@ -85,7 +86,7 @@ lp2 = lp2 - 1
 For t = 1 To tt
 
     drv$(t + lp2) = Left$(dr$(t), 7)
-
+    drv2$(t + lp2) = dr$(t)
 Next t
 
 total = lp2 + t - 1
@@ -104,7 +105,7 @@ Print
 
 For xx = 1 To total
 
-    Print Str$(xx) + "- " + drv$(xx)
+    Print Str$(xx) + "- " + drv2$(xx)
 
 Next xx
 

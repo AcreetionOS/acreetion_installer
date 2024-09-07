@@ -1,5 +1,149 @@
-__STRING_NAME->len=0;
-__STRING_FULLNAME->len=0;
+if (__ARRAY_STRING_DRV[2]&1){
+if (__ARRAY_STRING_DRV[2]&2){
+tmp_long=__ARRAY_STRING_DRV[5];
+while(tmp_long--){
+((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[tmp_long]))->len=0;
+}
+}else{
+tmp_long=__ARRAY_STRING_DRV[5];
+while(tmp_long--){
+qbs_free((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[tmp_long]));
+}
+free((void*)(__ARRAY_STRING_DRV[0]));
+__ARRAY_STRING_DRV[2]^=1;
+__ARRAY_STRING_DRV[4]=2147483647;
+__ARRAY_STRING_DRV[5]=0;
+__ARRAY_STRING_DRV[6]=0;
+__ARRAY_STRING_DRV[0]=(ptrszint)&nothingstring;
+}
+}
+if (__ARRAY_STRING_DRIVE[2]&1){
+if (__ARRAY_STRING_DRIVE[2]&2){
+tmp_long=__ARRAY_STRING_DRIVE[5];
+while(tmp_long--){
+((qbs*)(((uint64*)(__ARRAY_STRING_DRIVE[0]))[tmp_long]))->len=0;
+}
+}else{
+tmp_long=__ARRAY_STRING_DRIVE[5];
+while(tmp_long--){
+qbs_free((qbs*)(((uint64*)(__ARRAY_STRING_DRIVE[0]))[tmp_long]));
+}
+free((void*)(__ARRAY_STRING_DRIVE[0]));
+__ARRAY_STRING_DRIVE[2]^=1;
+__ARRAY_STRING_DRIVE[4]=2147483647;
+__ARRAY_STRING_DRIVE[5]=0;
+__ARRAY_STRING_DRIVE[6]=0;
+__ARRAY_STRING_DRIVE[0]=(ptrszint)&nothingstring;
+}
+}
+if (__ARRAY_STRING_ZONE[2]&1){
+if (__ARRAY_STRING_ZONE[2]&2){
+tmp_long=__ARRAY_STRING_ZONE[5];
+while(tmp_long--){
+((qbs*)(((uint64*)(__ARRAY_STRING_ZONE[0]))[tmp_long]))->len=0;
+}
+}else{
+tmp_long=__ARRAY_STRING_ZONE[5];
+while(tmp_long--){
+qbs_free((qbs*)(((uint64*)(__ARRAY_STRING_ZONE[0]))[tmp_long]));
+}
+free((void*)(__ARRAY_STRING_ZONE[0]));
+__ARRAY_STRING_ZONE[2]^=1;
+__ARRAY_STRING_ZONE[4]=2147483647;
+__ARRAY_STRING_ZONE[5]=0;
+__ARRAY_STRING_ZONE[6]=0;
+__ARRAY_STRING_ZONE[0]=(ptrszint)&nothingstring;
+}
+}
+if (__ARRAY_STRING_TIMEZONE[2]&1){
+if (__ARRAY_STRING_TIMEZONE[2]&2){
+tmp_long=__ARRAY_STRING_TIMEZONE[5];
+while(tmp_long--){
+((qbs*)(((uint64*)(__ARRAY_STRING_TIMEZONE[0]))[tmp_long]))->len=0;
+}
+}else{
+tmp_long=__ARRAY_STRING_TIMEZONE[5];
+while(tmp_long--){
+qbs_free((qbs*)(((uint64*)(__ARRAY_STRING_TIMEZONE[0]))[tmp_long]));
+}
+free((void*)(__ARRAY_STRING_TIMEZONE[0]));
+__ARRAY_STRING_TIMEZONE[2]^=1;
+__ARRAY_STRING_TIMEZONE[4]=2147483647;
+__ARRAY_STRING_TIMEZONE[5]=0;
+__ARRAY_STRING_TIMEZONE[6]=0;
+__ARRAY_STRING_TIMEZONE[0]=(ptrszint)&nothingstring;
+}
+}
+if (__ARRAY_STRING_DR[2]&1){
+if (__ARRAY_STRING_DR[2]&2){
+tmp_long=__ARRAY_STRING_DR[5];
+while(tmp_long--){
+((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[tmp_long]))->len=0;
+}
+}else{
+tmp_long=__ARRAY_STRING_DR[5];
+while(tmp_long--){
+qbs_free((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[tmp_long]));
+}
+free((void*)(__ARRAY_STRING_DR[0]));
+__ARRAY_STRING_DR[2]^=1;
+__ARRAY_STRING_DR[4]=2147483647;
+__ARRAY_STRING_DR[5]=0;
+__ARRAY_STRING_DR[6]=0;
+__ARRAY_STRING_DR[0]=(ptrszint)&nothingstring;
+}
+}
+if (__ARRAY_STRING_PART[2]&1){
+if (__ARRAY_STRING_PART[2]&2){
+tmp_long=__ARRAY_STRING_PART[5];
+while(tmp_long--){
+((qbs*)(((uint64*)(__ARRAY_STRING_PART[0]))[tmp_long]))->len=0;
+}
+}else{
+tmp_long=__ARRAY_STRING_PART[5];
+while(tmp_long--){
+qbs_free((qbs*)(((uint64*)(__ARRAY_STRING_PART[0]))[tmp_long]));
+}
+free((void*)(__ARRAY_STRING_PART[0]));
+__ARRAY_STRING_PART[2]^=1;
+__ARRAY_STRING_PART[4]=2147483647;
+__ARRAY_STRING_PART[5]=0;
+__ARRAY_STRING_PART[6]=0;
+__ARRAY_STRING_PART[0]=(ptrszint)&nothingstring;
+}
+}
+*__SINGLE_TT=0;
+*__SINGLE_LP2=0;
+if (__ARRAY_STRING_DRV2[2]&1){
+if (__ARRAY_STRING_DRV2[2]&2){
+tmp_long=__ARRAY_STRING_DRV2[5];
+while(tmp_long--){
+((qbs*)(((uint64*)(__ARRAY_STRING_DRV2[0]))[tmp_long]))->len=0;
+}
+}else{
+tmp_long=__ARRAY_STRING_DRV2[5];
+while(tmp_long--){
+qbs_free((qbs*)(((uint64*)(__ARRAY_STRING_DRV2[0]))[tmp_long]));
+}
+free((void*)(__ARRAY_STRING_DRV2[0]));
+__ARRAY_STRING_DRV2[2]^=1;
+__ARRAY_STRING_DRV2[4]=2147483647;
+__ARRAY_STRING_DRV2[5]=0;
+__ARRAY_STRING_DRV2[6]=0;
+__ARRAY_STRING_DRV2[0]=(ptrszint)&nothingstring;
+}
+}
+*__SINGLE_T=0;
+*__SINGLE_TOTAL=0;
 *__SINGLE_XX=0;
-__STRING_PASS->len=0;
-__STRING_P2->len=0;
+*__SINGLE_SE=0;
+__STRING_AA->len=0;
+__STRING_DV->len=0;
+__STRING_II->len=0;
+__STRING_HOMEPART->len=0;
+__STRING_PATH->len=0;
+__STRING_PTNAME->len=0;
+__STRING_PATH3->len=0;
+__STRING_PATH4->len=0;
+__STRING_PATH5->len=0;
+__STRING_PATH2->len=0;
