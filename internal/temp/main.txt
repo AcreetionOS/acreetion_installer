@@ -435,75 +435,121 @@ sub_shell(qbs_add(qbs_add(qbs_new_txt_len("echo ",5),__STRING_AA),qbs_new_txt_le
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(125);}while(r);
 do{
-sub_shell(qbs_new_txt_len("mkinitcpio -P",13),1);
+qbs_set(__STRING_XX,qbs_add(qbs_add(qbs_new_txt_len("mount /dev/",11),__STRING_DV),qbs_new_txt_len("1 /boot",7)));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(129);}while(r);
 do{
-sub_shell(qbs_new_txt_len("bootctl install",15),1);
+sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(130);}while(r);
 do{
-sub_open_gwbasic(qbs_new_txt_len("o",1), 1 ,qbs_new_txt_len("/boot/loader/entries/linux-zen.conf",35),NULL,0);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(132);}while(r);
-do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("mounting: ",10));
 if (new_error) goto skip27;
-sub_file_print(tmp_fileno,qbs_new_txt_len("## Acreetion OS boot",20), 0 , 0 , 1 );
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_set(tqbs,__STRING_XX);
 if (new_error) goto skip27;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
 skip27:
+qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
+if(!qbevent)break;evnt(131);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(qbs_add(qbs_new_txt_len("parted /dev/",12),__STRING_DV),qbs_new_txt_len(" set 1 boot on",14)));
+qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(134);}while(r);
 do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
-if (new_error) goto skip28;
-sub_file_print(tmp_fileno,qbs_new_txt_len("Title     Acreetion OS",22), 0 , 0 , 1 );
-if (new_error) goto skip28;
-skip28:
+sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
-if(!qbevent)break;evnt(135);}while(r);
+if(!qbevent)break;evnt(136);}while(r);
+do{
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("parted: ",8));
+if (new_error) goto skip28;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_set(tqbs,__STRING_XX);
+if (new_error) goto skip28;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip28:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(137);}while(r);
+do{
+sub_shell(qbs_new_txt_len("mkinitcpio -P",13),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(139);}while(r);
+do{
+sub_shell(qbs_new_txt_len("bootctl install",15),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(140);}while(r);
+do{
+sub_open_gwbasic(qbs_new_txt_len("o",1), 1 ,qbs_new_txt_len("/boot/loader/entries/linux-zen.conf",35),NULL,0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(142);}while(r);
 do{
 tab_spc_cr_size=2;
 tab_fileno=tmp_fileno= 1 ;
 if (new_error) goto skip29;
-sub_file_print(tmp_fileno,qbs_new_txt_len("linux     /vmlinuz-linux-zen",28), 0 , 0 , 1 );
+sub_file_print(tmp_fileno,qbs_new_txt_len("## Acreetion OS boot",20), 0 , 0 , 1 );
 if (new_error) goto skip29;
 skip29:
 qbs_cleanup(qbs_tmp_base,0);
 tab_spc_cr_size=1;
-if(!qbevent)break;evnt(136);}while(r);
+if(!qbevent)break;evnt(144);}while(r);
 do{
 tab_spc_cr_size=2;
 tab_fileno=tmp_fileno= 1 ;
 if (new_error) goto skip30;
-sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /inittramfs-linux-zen.img",35), 0 , 0 , 1 );
+sub_file_print(tmp_fileno,qbs_new_txt_len("Title     Acreetion OS",22), 0 , 0 , 1 );
 if (new_error) goto skip30;
 skip30:
 qbs_cleanup(qbs_tmp_base,0);
 tab_spc_cr_size=1;
-if(!qbevent)break;evnt(137);}while(r);
+if(!qbevent)break;evnt(145);}while(r);
 do{
 tab_spc_cr_size=2;
 tab_fileno=tmp_fileno= 1 ;
 if (new_error) goto skip31;
-sub_file_print(tmp_fileno,qbs_add(qbs_add(qbs_new_txt_len("Options root=/dev/",18),__STRING_DV),qbs_new_txt_len("2 rw rootfstype=ext4",20)), 0 , 0 , 1 );
+sub_file_print(tmp_fileno,qbs_new_txt_len("linux     /vmlinuz-linux-zen",28), 0 , 0 , 1 );
 if (new_error) goto skip31;
 skip31:
 qbs_cleanup(qbs_tmp_base,0);
 tab_spc_cr_size=1;
-if(!qbevent)break;evnt(138);}while(r);
+if(!qbevent)break;evnt(146);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip32;
+sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /inittramfs-linux-zen.img",35), 0 , 0 , 1 );
+if (new_error) goto skip32;
+skip32:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(147);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip33;
+sub_file_print(tmp_fileno,qbs_add(qbs_add(qbs_new_txt_len("Options root=/dev/",18),__STRING_DV),qbs_new_txt_len("2 rw rootfstype=ext4",20)), 0 , 0 , 1 );
+if (new_error) goto skip33;
+skip33:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(148);}while(r);
 do{
 sub_close( 1 ,1);
-if(!qbevent)break;evnt(140);}while(r);
+if(!qbevent)break;evnt(150);}while(r);
 do{
 if (sub_gl_called) error(271);
 close_program=1;
 end();
-if(!qbevent)break;evnt(144);}while(r);
+if(!qbevent)break;evnt(154);}while(r);
 sub_end();
 return;
 }

@@ -161,7 +161,7 @@ End If
 
 Rem set up boot
 
-Shell "parted /dev/" + dv$ + " set 1 boot on"
+Shell "parted -s /dev/" + dv$ + " set 1 boot on"
 
 
 Print

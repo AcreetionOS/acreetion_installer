@@ -126,6 +126,16 @@ Shell "echo " + aa$ + " > /etc/hostname"
 
 Rem set up system boot!
 
+xx$ = "mount /dev/" + dv$ + "1 /boot"
+Shell xx$
+Print "mounting: "; xx$
+
+
+xx$ = "parted /dev/" + dv$ + " set 1 boot on"
+
+Shell xx$
+Print "parted: "; xx$
+
 Shell "mkinitcpio -P"
 Shell "bootctl install"
 
