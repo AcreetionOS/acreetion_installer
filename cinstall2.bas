@@ -6,6 +6,10 @@ Rem ask for name and create the user name and dictories now.
 
 Cls
 
+Open "i", #1, "/temp.txt"
+Line Input #1, dv$
+Close #1
+
 over1:
 
 Print
@@ -97,6 +101,45 @@ Print "Adding user to system now, including wheel group for SUDO powers."
 Print
 
 Shell "useradd " + name$ + " -b /home/" + name$ + " -p " + pass$ + " -G wheel"
-Shell ""
 
+Rem setup fonts and stuff.
+
+Shell "sed 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8'"
+Shell "sed 's/#en_US ISO-8859-1/en_US ISO-8859-1'"
+Shell "locale-gen"
+Shell "echo 'LANG=en_US.UTF-8' > /etc/locale.conf"
+Shell "echo 'LANG=en_US ISO-8859-1' >> /etc/locale.conf"
+Shell "echo 'LANG=en_US ISO-8859-1' >> /etc/locale.conf"
+
+Rem set host name
+
+aa$ = ""
+
+Do While aa$ = ""
+
+    Print
+    Line Input "Host name: ", aa$
+
+Loop
+
+Shell "echo " + aa$ + " > /etc/hostname"
+
+Rem set up system boot!
+
+Shell "mkinitcpio -P"
+Shell "bootctl install"
+
+Open "o", #1, "/boot/loader/entries/linux-zen.conf"
+
+Print #1, "## Acreetion OS boot"
+Print #1, "Title     Acreetion OS"
+Print #1, "linux     /vmlinuz-linux-zen"
+Print #1, "initrd    /inittramfs-linux-zen.img"
+Print #1, "Options root=/dev/" + dv$ + "2 rw rootfstype=ext4"
+
+Close #1
+
+Rem exit system
+
+System
 

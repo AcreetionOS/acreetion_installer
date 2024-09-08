@@ -1,3 +1,4 @@
+if (!__STRING_DV)__STRING_DV=qbs_new(0,0);
 if (!__STRING_NAME)__STRING_NAME=qbs_new(0,0);
 if (!__STRING_FULLNAME)__STRING_FULLNAME=qbs_new(0,0);
 if(__SINGLE_XX==NULL){

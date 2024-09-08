@@ -1,3 +1,4 @@
+qbs *__STRING_DV=NULL;
 qbs *__STRING_NAME=NULL;
 qbs *__STRING_FULLNAME=NULL;
 float *__SINGLE_XX=NULL;
