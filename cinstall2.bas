@@ -136,16 +136,17 @@ xx$ = "parted /dev/" + dv$ + " set 1 boot on"
 Shell xx$
 Print "parted: "; xx$
 
-Shell "mkinitcpio -P"
 Shell "bootctl install"
+Shell "mkinitcpio -P"
 
 Open "o", #1, "/boot/loader/entries/linux-zen.conf"
 
 Print #1, "## Acreetion OS boot"
 Print #1, "Title     Acreetion OS"
 Print #1, "linux     /vmlinuz-linux-zen"
-Print #1, "initrd    /inittramfs-linux-zen.img"
-Print #1, "Options root=/dev/" + dv$ + "2 rw rootfstype=ext4"
+Print #1, "initrd    /initramfs-linux-zen.img"
+Print #1, "Options root=/dev/" + dv$ + "2 rw"
+Print #1, "EOF"
 
 Close #1
 

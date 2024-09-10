@@ -481,11 +481,11 @@ qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(137);}while(r);
 do{
-sub_shell(qbs_new_txt_len("mkinitcpio -P",13),1);
+sub_shell(qbs_new_txt_len("bootctl install",15),1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(139);}while(r);
 do{
-sub_shell(qbs_new_txt_len("bootctl install",15),1);
+sub_shell(qbs_new_txt_len("mkinitcpio -P",13),1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(140);}while(r);
 do{
@@ -526,7 +526,7 @@ do{
 tab_spc_cr_size=2;
 tab_fileno=tmp_fileno= 1 ;
 if (new_error) goto skip32;
-sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /inittramfs-linux-zen.img",35), 0 , 0 , 1 );
+sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /initramfs-linux-zen.img",34), 0 , 0 , 1 );
 if (new_error) goto skip32;
 skip32:
 qbs_cleanup(qbs_tmp_base,0);
@@ -536,20 +536,30 @@ do{
 tab_spc_cr_size=2;
 tab_fileno=tmp_fileno= 1 ;
 if (new_error) goto skip33;
-sub_file_print(tmp_fileno,qbs_add(qbs_add(qbs_new_txt_len("Options root=/dev/",18),__STRING_DV),qbs_new_txt_len("2 rw rootfstype=ext4",20)), 0 , 0 , 1 );
+sub_file_print(tmp_fileno,qbs_add(qbs_add(qbs_new_txt_len("Options root=/dev/",18),__STRING_DV),qbs_new_txt_len("2 rw",4)), 0 , 0 , 1 );
 if (new_error) goto skip33;
 skip33:
 qbs_cleanup(qbs_tmp_base,0);
 tab_spc_cr_size=1;
 if(!qbevent)break;evnt(148);}while(r);
 do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip34;
+sub_file_print(tmp_fileno,qbs_new_txt_len("EOF",3), 0 , 0 , 1 );
+if (new_error) goto skip34;
+skip34:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(149);}while(r);
+do{
 sub_close( 1 ,1);
-if(!qbevent)break;evnt(150);}while(r);
+if(!qbevent)break;evnt(151);}while(r);
 do{
 if (sub_gl_called) error(271);
 close_program=1;
 end();
-if(!qbevent)break;evnt(154);}while(r);
+if(!qbevent)break;evnt(155);}while(r);
 sub_end();
 return;
 }

@@ -1,3 +1,9 @@
+zone
+localtime
+vmlinuz
+linux-firm
+pacstrap
+fstab
 parted
 mount
 directory
