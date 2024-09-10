@@ -1,3 +1,8 @@
+grub
+mtools
+os-prober
+efibootmgr
+bootctl
 zone
 localtime
 vmlinuz

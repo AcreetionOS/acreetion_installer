@@ -6,9 +6,21 @@ do{
 sub_cls(NULL,NULL,0);
 if(!qbevent)break;evnt(7);}while(r);
 do{
-sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("/temp.txt",9),NULL,0);
+sub_shell(qbs_new_txt_len("sed -i 's/#en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen",53),1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(9);}while(r);
+do{
+sub_shell(qbs_new_txt_len("locale-gen",10),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(10);}while(r);
+do{
+sub_shell(qbs_new_txt_len("genfstab -U -p / /etc/fstab",27),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(11);}while(r);
+do{
+sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("/temp.txt",9),NULL,0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(13);}while(r);
 do{
 tmp_fileno= 1 ;
 if (new_error) goto skip1;
@@ -16,26 +28,26 @@ sub_file_line_input_string(tmp_fileno,__STRING_DV);
 if (new_error) goto skip1;
 skip1:
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(10);}while(r);
+if(!qbevent)break;evnt(14);}while(r);
 do{
 sub_close( 1 ,1);
-if(!qbevent)break;evnt(11);}while(r);
+if(!qbevent)break;evnt(15);}while(r);
 LABEL_OVER1:;
-if(qbevent){evnt(13);r=0;}
+if(qbevent){evnt(17);r=0;}
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip2:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15);}while(r);
+if(!qbevent)break;evnt(19);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip3:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(16);}while(r);
+if(!qbevent)break;evnt(20);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Create your user account!",25));
@@ -46,17 +58,17 @@ qbs_print(nothingstring,1);
 skip4:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(18);}while(r);
+if(!qbevent)break;evnt(22);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip5:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(20);}while(r);
-S_10:;
+if(!qbevent)break;evnt(24);}while(r);
+S_13:;
 while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_NAME,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(23);if(r)goto S_10;}
+if(qbevent){evnt(27);if(r)goto S_13;}
 do{
 qbs_print(qbs_new_txt_len("Your name please? ",18),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -64,42 +76,42 @@ qbs_input_variableoffsets[1]=__STRING_NAME;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(24);}while(r);
+if(!qbevent)break;evnt(28);}while(r);
 dl_continue_6:;
 }
 dl_exit_6:;
 do{
 qbs_set(__STRING_FULLNAME,qbs_lcase(__STRING_NAME));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(27);}while(r);
+if(!qbevent)break;evnt(31);}while(r);
 do{
 *__SINGLE_XX=func_instr(NULL,__STRING_FULLNAME,qbs_new_txt_len(" ",1),0);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(29);}while(r);
+if(!qbevent)break;evnt(33);}while(r);
 do{
 qbs_set(__STRING_NAME,func_mid(__STRING_FULLNAME, 1 ,qbr(*__SINGLE_XX- 1 ),1));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(31);}while(r);
+if(!qbevent)break;evnt(35);}while(r);
 LABEL_LOOP9:;
-if(qbevent){evnt(33);r=0;}
+if(qbevent){evnt(37);r=0;}
 do{
 qbs_set(__STRING_PASS,qbs_new_txt_len("123",3));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(35);}while(r);
+if(!qbevent)break;evnt(39);}while(r);
 do{
 qbs_set(__STRING_P2,qbs_new_txt_len("fcku",4));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(36);}while(r);
+if(!qbevent)break;evnt(40);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip7:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(38);}while(r);
-S_19:;
+if(!qbevent)break;evnt(42);}while(r);
+S_22:;
 while((qbs_cleanup(qbs_tmp_base,qbs_notequal(__STRING_PASS,__STRING_P2)))||new_error){
-if(qbevent){evnt(39);if(r)goto S_19;}
+if(qbevent){evnt(43);if(r)goto S_22;}
 do{
 qbs_print(qbs_new_txt_len("Password: ",10),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -107,7 +119,7 @@ qbs_input_variableoffsets[1]=__STRING_PASS;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(41);}while(r);
+if(!qbevent)break;evnt(45);}while(r);
 do{
 qbs_print(qbs_new_txt_len("Verify Password: ",17),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -115,7 +127,7 @@ qbs_input_variableoffsets[1]=__STRING_P2;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(43);}while(r);
+if(!qbevent)break;evnt(47);}while(r);
 dl_continue_8:;
 }
 dl_exit_8:;
@@ -125,7 +137,7 @@ qbs_print(nothingstring,1);
 skip9:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(47);}while(r);
+if(!qbevent)break;evnt(51);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_add(qbs_add(qbs_new_txt_len("Use ",4),__STRING_NAME),qbs_new_txt_len(" as your username?  (Y/n): ",27)));
@@ -136,24 +148,24 @@ qbs_print(nothingstring,1);
 skip10:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(48);}while(r);
+if(!qbevent)break;evnt(52);}while(r);
 do{
 qbs_input_variabletypes[1]=ISSTRING+512;
 qbs_input_variableoffsets[1]=__STRING_AA;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(50);}while(r);
-S_26:;
+if(!qbevent)break;evnt(54);}while(r);
+S_29:;
 if ((qbs_cleanup(qbs_tmp_base,(qbs_equal(__STRING_AA,qbs_new_txt_len("n",1)))|(qbs_equal(__STRING_AA,qbs_new_txt_len("N",1)))))||new_error){
-if(qbevent){evnt(52);if(r)goto S_26;}
+if(qbevent){evnt(56);if(r)goto S_29;}
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip11:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(54);}while(r);
+if(!qbevent)break;evnt(58);}while(r);
 do{
 qbs_print(qbs_new_txt_len("Username: ",10),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -161,10 +173,10 @@ qbs_input_variableoffsets[1]=__STRING_NAME;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(55);}while(r);
-S_29:;
+if(!qbevent)break;evnt(59);}while(r);
+S_32:;
 if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_NAME,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(56);if(r)goto S_29;}
+if(qbevent){evnt(60);if(r)goto S_32;}
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Cant be blank, sorry!",21));
@@ -175,10 +187,10 @@ qbs_print(nothingstring,1);
 skip12:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(57);}while(r);
+if(!qbevent)break;evnt(61);}while(r);
 do{
 goto LABEL_OVER1;
-if(!qbevent)break;evnt(58);}while(r);
+if(!qbevent)break;evnt(62);}while(r);
 }
 }
 do{
@@ -187,7 +199,7 @@ qbs_print(nothingstring,1);
 skip13:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(62);}while(r);
+if(!qbevent)break;evnt(66);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Creating User Account: ",23));
@@ -202,31 +214,31 @@ qbs_print(nothingstring,1);
 skip14:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(63);}while(r);
+if(!qbevent)break;evnt(67);}while(r);
 do{
 sub_shell(qbs_add(qbs_new_txt_len("mkdir /home/",12),__STRING_NAME),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(67);}while(r);
+if(!qbevent)break;evnt(71);}while(r);
 do{
 qbs_set(__STRING_XX,qbs_add(qbs_new_txt_len("mkdir /home/",12),__STRING_NAME));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(68);}while(r);
-do{
-sub_shell(__STRING_XX,1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(69);}while(r);
-do{
-qbs_set(__STRING_BB,__STRING_XX);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(70);}while(r);
-do{
-qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Documents",10)));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(72);}while(r);
 do{
 sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(73);}while(r);
+do{
+qbs_set(__STRING_BB,__STRING_XX);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(74);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Documents",10)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(76);}while(r);
+do{
+sub_shell(__STRING_XX,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(77);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,__STRING_XX);
@@ -237,15 +249,15 @@ qbs_print(nothingstring,1);
 skip15:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(74);}while(r);
+if(!qbevent)break;evnt(78);}while(r);
 do{
 qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Templates",10)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(76);}while(r);
+if(!qbevent)break;evnt(80);}while(r);
 do{
 sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(77);}while(r);
+if(!qbevent)break;evnt(81);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,__STRING_XX);
@@ -256,15 +268,15 @@ qbs_print(nothingstring,1);
 skip16:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(78);}while(r);
+if(!qbevent)break;evnt(82);}while(r);
 do{
 qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Downloads",10)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(80);}while(r);
+if(!qbevent)break;evnt(84);}while(r);
 do{
 sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(81);}while(r);
+if(!qbevent)break;evnt(85);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,__STRING_XX);
@@ -275,15 +287,15 @@ qbs_print(nothingstring,1);
 skip17:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(82);}while(r);
+if(!qbevent)break;evnt(86);}while(r);
 do{
 qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Videos",7)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(84);}while(r);
+if(!qbevent)break;evnt(88);}while(r);
 do{
 sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(85);}while(r);
+if(!qbevent)break;evnt(89);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,__STRING_XX);
@@ -294,15 +306,15 @@ qbs_print(nothingstring,1);
 skip18:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(86);}while(r);
+if(!qbevent)break;evnt(90);}while(r);
 do{
 qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Pictures",9)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(88);}while(r);
+if(!qbevent)break;evnt(92);}while(r);
 do{
 sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(89);}while(r);
+if(!qbevent)break;evnt(93);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,__STRING_XX);
@@ -313,15 +325,15 @@ qbs_print(nothingstring,1);
 skip19:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(90);}while(r);
+if(!qbevent)break;evnt(94);}while(r);
 do{
 qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Public",7)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(91);}while(r);
+if(!qbevent)break;evnt(95);}while(r);
 do{
 sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(92);}while(r);
+if(!qbevent)break;evnt(96);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,__STRING_XX);
@@ -332,15 +344,15 @@ qbs_print(nothingstring,1);
 skip20:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(93);}while(r);
+if(!qbevent)break;evnt(97);}while(r);
 do{
 qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Desktop",8)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(95);}while(r);
+if(!qbevent)break;evnt(99);}while(r);
 do{
 sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(96);}while(r);
+if(!qbevent)break;evnt(100);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,__STRING_XX);
@@ -351,14 +363,14 @@ qbs_print(nothingstring,1);
 skip21:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(97);}while(r);
+if(!qbevent)break;evnt(101);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip22:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(99);}while(r);
+if(!qbevent)break;evnt(103);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Adding user to system now, including wheel group for SUDO powers.",65));
@@ -369,56 +381,56 @@ qbs_print(nothingstring,1);
 skip23:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(100);}while(r);
+if(!qbevent)break;evnt(104);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip24:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(101);}while(r);
+if(!qbevent)break;evnt(105);}while(r);
 do{
 sub_shell(qbs_add(qbs_add(qbs_add(qbs_add(qbs_add(qbs_add(qbs_new_txt_len("useradd ",8),__STRING_NAME),qbs_new_txt_len(" -b /home/",10)),__STRING_NAME),qbs_new_txt_len(" -p ",4)),__STRING_PASS),qbs_new_txt_len(" -G wheel",9)),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(103);}while(r);
+if(!qbevent)break;evnt(107);}while(r);
 do{
 sub_shell(qbs_new_txt_len("sed 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8'",44),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(107);}while(r);
+if(!qbevent)break;evnt(111);}while(r);
 do{
 sub_shell(qbs_new_txt_len("sed 's/#en_US ISO-8859-1/en_US ISO-8859-1'",42),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(108);}while(r);
+if(!qbevent)break;evnt(112);}while(r);
 do{
 sub_shell(qbs_new_txt_len("locale-gen",10),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(109);}while(r);
+if(!qbevent)break;evnt(113);}while(r);
 do{
 sub_shell(qbs_new_txt_len("echo 'LANG=en_US.UTF-8' > /etc/locale.conf",42),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(110);}while(r);
+if(!qbevent)break;evnt(114);}while(r);
 do{
 sub_shell(qbs_new_txt_len("echo 'LANG=en_US ISO-8859-1' >> /etc/locale.conf",48),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(111);}while(r);
+if(!qbevent)break;evnt(115);}while(r);
 do{
 sub_shell(qbs_new_txt_len("echo 'LANG=en_US ISO-8859-1' >> /etc/locale.conf",48),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(112);}while(r);
+if(!qbevent)break;evnt(116);}while(r);
 do{
 qbs_set(__STRING_AA,qbs_new_txt_len("",0));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(116);}while(r);
-S_72:;
+if(!qbevent)break;evnt(120);}while(r);
+S_75:;
 while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_AA,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(118);if(r)goto S_72;}
+if(qbevent){evnt(122);if(r)goto S_75;}
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip26:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(120);}while(r);
+if(!qbevent)break;evnt(124);}while(r);
 do{
 qbs_print(qbs_new_txt_len("Host name: ",11),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -426,140 +438,123 @@ qbs_input_variableoffsets[1]=__STRING_AA;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(121);}while(r);
+if(!qbevent)break;evnt(125);}while(r);
 dl_continue_25:;
 }
 dl_exit_25:;
 do{
 sub_shell(qbs_add(qbs_add(qbs_new_txt_len("echo ",5),__STRING_AA),qbs_new_txt_len(" > /etc/hostname",16)),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(125);}while(r);
-do{
-qbs_set(__STRING_XX,qbs_add(qbs_add(qbs_new_txt_len("mount /dev/",11),__STRING_DV),qbs_new_txt_len("1 /boot",7)));
-qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(129);}while(r);
-do{
-sub_shell(__STRING_XX,1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(130);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("mounting: ",10));
-if (new_error) goto skip27;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_set(tqbs,__STRING_XX);
-if (new_error) goto skip27;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip27:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(131);}while(r);
 do{
 qbs_set(__STRING_XX,qbs_add(qbs_add(qbs_new_txt_len("parted /dev/",12),__STRING_DV),qbs_new_txt_len(" set 1 boot on",14)));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(134);}while(r);
+if(!qbevent)break;evnt(138);}while(r);
 do{
 sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(136);}while(r);
-do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("parted: ",8));
-if (new_error) goto skip28;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_set(tqbs,__STRING_XX);
-if (new_error) goto skip28;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip28:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(137);}while(r);
-do{
-sub_shell(qbs_new_txt_len("bootctl install",15),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(139);}while(r);
-do{
-sub_shell(qbs_new_txt_len("mkinitcpio -P",13),1);
-qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(140);}while(r);
 do{
-sub_open_gwbasic(qbs_new_txt_len("o",1), 1 ,qbs_new_txt_len("/boot/loader/entries/linux-zen.conf",35),NULL,0);
+sub_shell(qbs_new_txt_len("pacman -S grub efibootmgr dosfstools os-prober mtools --noconfirm",65),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(142);}while(r);
+if(!qbevent)break;evnt(143);}while(r);
 do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
-if (new_error) goto skip29;
-sub_file_print(tmp_fileno,qbs_new_txt_len("## Acreetion OS boot",20), 0 , 0 , 1 );
-if (new_error) goto skip29;
-skip29:
+sub_shell(qbs_new_txt_len("mkdir /boot/EFI",15),1);
 qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
-if(!qbevent)break;evnt(144);}while(r);
-do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
-if (new_error) goto skip30;
-sub_file_print(tmp_fileno,qbs_new_txt_len("Title     Acreetion OS",22), 0 , 0 , 1 );
-if (new_error) goto skip30;
-skip30:
-qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
-if(!qbevent)break;evnt(145);}while(r);
-do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
-if (new_error) goto skip31;
-sub_file_print(tmp_fileno,qbs_new_txt_len("linux     /vmlinuz-linux-zen",28), 0 , 0 , 1 );
-if (new_error) goto skip31;
-skip31:
-qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
 if(!qbevent)break;evnt(146);}while(r);
 do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
-if (new_error) goto skip32;
-sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /initramfs-linux-zen.img",34), 0 , 0 , 1 );
-if (new_error) goto skip32;
-skip32:
+sub_shell(qbs_add(qbs_add(qbs_new_txt_len("mount /dev/",11),__STRING_DV),qbs_new_txt_len("1 /boot/EFI",11)),1);
 qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
 if(!qbevent)break;evnt(147);}while(r);
 do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
-if (new_error) goto skip33;
-sub_file_print(tmp_fileno,qbs_add(qbs_add(qbs_new_txt_len("Options root=/dev/",18),__STRING_DV),qbs_new_txt_len("2 rw",4)), 0 , 0 , 1 );
-if (new_error) goto skip33;
-skip33:
+sub_shell(qbs_new_txt_len("grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck",68),1);
 qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
 if(!qbevent)break;evnt(148);}while(r);
 do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
-if (new_error) goto skip34;
-sub_file_print(tmp_fileno,qbs_new_txt_len("EOF",3), 0 , 0 , 1 );
-if (new_error) goto skip34;
-skip34:
+sub_shell(qbs_new_txt_len("cp /usr/share/locale/en\\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo",73),1);
 qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
 if(!qbevent)break;evnt(149);}while(r);
 do{
-sub_close( 1 ,1);
+sub_shell(qbs_new_txt_len("grub-mkconfig -o /boot/grub/grub.cfg",36),1);
+qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(151);}while(r);
 do{
 if (sub_gl_called) error(271);
 close_program=1;
 end();
-if(!qbevent)break;evnt(155);}while(r);
+if(!qbevent)break;evnt(159);}while(r);
+do{
+sub_open_gwbasic(qbs_new_txt_len("o",1), 1 ,qbs_new_txt_len("/boot/loader/entries/linux-zen.conf",35),NULL,0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(161);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip27;
+sub_file_print(tmp_fileno,qbs_new_txt_len("## Acreetion OS boot",20), 0 , 0 , 1 );
+if (new_error) goto skip27;
+skip27:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(163);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip28;
+sub_file_print(tmp_fileno,qbs_new_txt_len("Title     Acreetion OS",22), 0 , 0 , 1 );
+if (new_error) goto skip28;
+skip28:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(164);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip29;
+sub_file_print(tmp_fileno,qbs_new_txt_len("linux     /vmlinuz-linux-zen",28), 0 , 0 , 1 );
+if (new_error) goto skip29;
+skip29:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(165);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip30;
+sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /initramfs-linux-zen.img",34), 0 , 0 , 1 );
+if (new_error) goto skip30;
+skip30:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(166);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip31;
+sub_file_print(tmp_fileno,qbs_add(qbs_add(qbs_new_txt_len("Options root=/dev/",18),__STRING_DV),qbs_new_txt_len("2 rw",4)), 0 , 0 , 1 );
+if (new_error) goto skip31;
+skip31:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(167);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip32;
+sub_file_print(tmp_fileno,qbs_new_txt_len("EOF",3), 0 , 0 , 1 );
+if (new_error) goto skip32;
+skip32:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(168);}while(r);
+do{
+sub_close( 1 ,1);
+if(!qbevent)break;evnt(170);}while(r);
+do{
+if (sub_gl_called) error(271);
+close_program=1;
+end();
+if(!qbevent)break;evnt(174);}while(r);
 sub_end();
 return;
 }

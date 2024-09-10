@@ -6,6 +6,10 @@ Rem ask for name and create the user name and dictories now.
 
 Cls
 
+Shell "sed -i 's/#en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen"
+Shell "locale-gen"
+Shell "genfstab -U -p / /etc/fstab"
+
 Open "i", #1, "/temp.txt"
 Line Input #1, dv$
 Close #1
@@ -126,18 +130,33 @@ Shell "echo " + aa$ + " > /etc/hostname"
 
 Rem set up system boot!
 
-xx$ = "mount /dev/" + dv$ + "1 /boot"
-Shell xx$
-Print "mounting: "; xx$
+Rem xx$ = "mount /dev/" + dv$ + "1 /boot"
+Rem Shell xx$
+Rem Print "mounting: "; xx$
 
 
 xx$ = "parted /dev/" + dv$ + " set 1 boot on"
 
 Shell xx$
-Print "parted: "; xx$
+Rem Print "parted: "; xx$
 
-Shell "bootctl install"
-Shell "mkinitcpio -P"
+Shell "pacman -S grub efibootmgr dosfstools os-prober mtools --noconfirm"
+rem Shell "mkinitcpio -P"
+
+Shell "mkdir /boot/EFI"
+Shell "mount /dev/" + dv$ + "1 /boot/EFI"
+Shell "grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck"
+Shell "cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo"
+
+Shell "grub-mkconfig -o /boot/grub/grub.cfg"
+
+
+Rem Shell "bootctl --boot-path=/boot install"
+
+Rem shell "kinitcpio -P"
+
+
+System
 
 Open "o", #1, "/boot/loader/entries/linux-zen.conf"
 

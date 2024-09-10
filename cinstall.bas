@@ -149,7 +149,7 @@ aa$ = LCase$(aa$)
 
 If aa$ = "y" Or aa$ = "yes" Then
     homepart$ = "y"
-    path$ = "parted -s /dev/" + dv$ + " mklabel ESP mkpart primary 1MiB 512MiB mkpart primary 512MiB 100%"
+    path$ = "parted -s /dev/" + dv$ + " mklabel gpt mkpart primary 1MiB 512MiB mkpart primary 512MiB 100%"
 End If
 
 If aa$ = "n" Or aa$ = "no" Then
