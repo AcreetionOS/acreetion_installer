@@ -6,10 +6,10 @@ stty -icanon -echo min 1 time 0
 dd count=1 2>/dev/null
 stty $OLDCONFIG
 }
-echo "C++ Debugging: cinstall2 using GDB"
+echo "C++ Debugging: cinstall using GDB"
 echo "Debugger commands:"
 echo "After the debugger launches type 'run' to start your program"
 echo "After your program crashes type 'list' to find where the problem is and fix/report it"
 echo "(the GDB debugger has many other useful commands, this advice is for beginners)"
-gdb "/home/darren/acreetion_installer/cinstall2"
+gdb "/home/johnathan/acreetion_installer/cinstall"
 Pause

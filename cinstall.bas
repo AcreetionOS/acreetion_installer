@@ -99,7 +99,7 @@ Cls
 
 Print "Choose Drive to install Acreetion OS on"
 Print "**WARNING**: All Data On drive will be destroyed!"
-Print "Including windows!!!!"
+Print "Including Windows!!!!"
 Print
 Print
 
@@ -127,7 +127,7 @@ Loop
 
 ii$ = LCase$(ii$)
 
-If ii$ = "no" Then
+If ii$ = "no" Then                                                                                                       a
     ii$ = ""
     GoTo loop99
 End If
@@ -141,7 +141,7 @@ aa$ = ""
 Do While aa$ = ""
 
     Print
-    Line Input "Do you want your home director in root? (Yes/No): ", aa$
+    Line Input "Do you want your home directory in root? (Yes/No): ", aa$
 
 Loop
 
@@ -149,17 +149,18 @@ aa$ = LCase$(aa$)
 
 If aa$ = "y" Or aa$ = "yes" Then
     homepart$ = "y"
-    path$ = "parted -s /dev/" + dv$ + " mklabel gpt mkpart primary 1MiB 512MiB mkpart primary 512MiB 100%"
+    path$ = "parted -s /dev/" + dv$ + " mklabel gpt mkpart primary 1MIB 512MiB set 1 boot on set 1 esp on mkpart primary 512MiB 100% quit"
 End If
 
 If aa$ = "n" Or aa$ = "no" Then
 
     homepart$ = "n"
-    path$ = "parted -s /dev/" + dv$ + " mklabel gpt mkpart primary 34 1000 mkpart primary 1001 30% mkpart primary 30% 100%"
+    path$ = "parted -s /dev/" + dv$ + " mklabel gpt mkpart primary 1MiB 512MiB set 1 boot on set 1 esp on mkpart primary 1001 30% mkpart primary 30% 100% quit"
 
 End If
 
 
+sudo parted /dev/sda mkpart primary fat32 1MiB 513MiB set 1 boot on set 1 esp on quit
 
 Print
 
@@ -173,18 +174,18 @@ Print path$
 Shell path$
 Print "Done."
 Print
-Print "Formating Partion EUFI"
+Print "Formating EFI Partion [Partition 1]"
 path$ = "mkfs.fat -F32 /dev/" + dv$ + "1"
 Print path$
 Shell path$
 Print "Done."
-Print "Format Partion 2"
+Print "Formatting Root Partion [Partition 2]"
 path$ = "mkfs.ext4 /dev/" + dv$ + "2"
 Shell path$
 Print "done."
 
 If homepart$ = "n" Then
-    Print "Formating Partion Home"
+    Print "Formating Home Partition [Partition 3]"
     path$ = "mkfs.ext4 /dev/" + dv$ + "3 > null"
     Shell path$
     Print "Done."

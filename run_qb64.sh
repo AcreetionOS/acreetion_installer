@@ -1,3 +1,3 @@
 #!/bin/sh
-cd /home/darren/qb64
+cd /home/$USER/qb64
 ./qb64 &
