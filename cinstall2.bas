@@ -2,13 +2,17 @@ $ScreenHide
 $Console
 _Dest _Console
 
+Rem create fstab file!
+
+
+
 Rem ask for name and create the user name and dictories now.
 
 Cls
 
 Shell "sed -i 's/#en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen"
 Shell "locale-gen"
-Shell "genfstab -U -p / /etc/fstab"
+Shell "genfstab -U >> /etc/fstab"
 
 Open "i", #1, "/temp.txt"
 Line Input #1, dv$
@@ -36,6 +40,8 @@ name$ = Mid$(fullname$, 1, xx - 1)
 
 loop9:
 
+Rem GoTo jump2
+
 pass$ = "123"
 p2$ = "fcku"
 
@@ -47,6 +53,8 @@ Do While pass$ <> p2$
     Line Input "Verify Password: ", p2$
 
 Loop
+
+jump2:
 
 Print
 Print "Use " + name$ + " as your username?  (Y/n): "
@@ -66,11 +74,16 @@ End If
 Print
 Print "Creating User Account: "; name$
 
+Rem Shell "useradd -m " + name$
+Rem Shell "passwd " + name$
+
+Shell "useradd " + name$ + " -b /home/" + name$ + " -p " + pass$ + " -G wheel"
+
 Rem creating user accounts!
 
-Shell "mkdir /home/" + name$
+Rem Shell "mkdir /home/" + name$
 xx$ = "mkdir /home/" + name$
-Shell xx$
+Rem Shell xx$
 bb$ = xx$
 
 xx$ = bb$ + "/Documents"
@@ -104,7 +117,7 @@ Print
 Print "Adding user to system now, including wheel group for SUDO powers."
 Print
 
-Shell "useradd " + name$ + " -b /home/" + name$ + " -p " + pass$ + " -G wheel"
+
 
 Rem setup fonts and stuff.
 
@@ -141,22 +154,38 @@ Shell xx$
 Rem Print "parted: "; xx$
 
 Shell "pacman -S grub efibootmgr dosfstools os-prober mtools --noconfirm"
-rem Shell "mkinitcpio -P"
+Rem Shell "mkinitcpio -P"
 
-Shell "mkdir /boot/EFI"
-Shell "mount /dev/" + dv$ + "1 /boot/EFI"
-Shell "grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck"
-Shell "cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo"
+Rem Shell "mkdir /boot/EFI"
+Rem Shell "mount /dev/" + dv$ + "1 /boot/"
+Rem Shell "grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck"
+Rem Shell "cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo"
 
-Shell "grub-mkconfig -o /boot/grub/grub.cfg"
+Rem Shell "grub-mkconfig -o /boot/grub/grub.cfg"
+
+Shell "mkinitcpio -P"
+Shell "bootctl install"
+
+Rem Shell "mkinitcpio -P"
+
+Rem Shell "cp /extraboot/* /boot/loader/entries/"
+
+Rem setup systemd boot entry!
+
+Shell "blkid > /tem.txt | grep -i " + dv$ + "2"
 
 
-Rem Shell "bootctl --boot-path=/boot install"
+Open "i", #1, "/tem.txt"
+Line Input #1, dd$
+Close #1
+Shell "rm /tem.txt"
 
-Rem shell "kinitcpio -P"
+Rem pull out Partuuid number for root drive
 
+ii = InStr(dd$, "PARTUUID=")
 
-System
+dd$ = Mid$(dd$, ii, Len(dd$))
+
 
 Open "o", #1, "/boot/loader/entries/linux-zen.conf"
 
@@ -164,10 +193,11 @@ Print #1, "## Acreetion OS boot"
 Print #1, "Title     Acreetion OS"
 Print #1, "linux     /vmlinuz-linux-zen"
 Print #1, "initrd    /initramfs-linux-zen.img"
-Print #1, "Options root=/dev/" + dv$ + "2 rw"
-Print #1, "EOF"
+Print #1, "initrd    /amd-ucode.img"
+Print #1, "Options   root=" + dd$ + " zswap.enabled=0 rw rootfstype=ext4 enable_psr=0"
 
 Close #1
+
 
 Rem exit system
 

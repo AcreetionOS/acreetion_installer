@@ -10,3 +10,12 @@ if (!__STRING_P2)__STRING_P2=qbs_new(0,0);
 if (!__STRING_AA)__STRING_AA=qbs_new(0,0);
 if (!__STRING_XX)__STRING_XX=qbs_new(0,0);
 if (!__STRING_BB)__STRING_BB=qbs_new(0,0);
+if (!__STRING_DD)__STRING_DD=qbs_new(0,0);
+if(__SINGLE_II==NULL){
+__SINGLE_II=(float*)mem_static_malloc(4);
+*__SINGLE_II=0;
+}
+byte_element_struct *byte_element_28=NULL;
+if (!byte_element_28){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_28=(byte_element_struct*)(mem_static_pointer-12); else byte_element_28=(byte_element_struct*)mem_static_malloc(12);
+}

@@ -229,8 +229,8 @@ Shell "cp -av /etc/localtime /mnt/ect/"
 Rem make fstab file!
 
 Shell "mkdir /mnt/etc/"
-Shell "genfstab -U /mnt/"
 
+Shell "cp -r /extraboot/ /mnt/"
 Shell "echo " + dv$ + " > /mnt/temp.txt"
 
 Shell "cp /root/cinstall2 /mnt/usr/bin/cinstall2"
@@ -239,8 +239,12 @@ Shell "chmod +x /mnt/user/bin/cinstall2"
 Shell "arch-chroot /mnt/ /usr/bin/cinstall2"
 
 Print
-Print "still in chroot"
-End
+Print "Setting up rest of boot for system!"
+Print
+Rem Shell "cp -r /extraboot/* /mnt/boot/"
 
+Print "Fixed!"
+Print
 
+System
 
