@@ -159,9 +159,6 @@ If aa$ = "n" Or aa$ = "no" Then
 
 End If
 
-
-sudo parted /dev/sda mkpart primary fat32 1MiB 513MiB set 1 boot on set 1 esp on quit
-
 Print
 
 Rem create partitions and wipe disk.

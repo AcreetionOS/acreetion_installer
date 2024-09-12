@@ -4,3 +4,6 @@ switch(return_point[next_return_point]){
 case 0:
 return;
 break;
+}
+}
+error(3);

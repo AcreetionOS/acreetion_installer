@@ -4,57 +4,53 @@ sub__dest(func__console());
 if(!qbevent)break;evnt(3);}while(r);
 do{
 sub_cls(NULL,NULL,0);
-if(!qbevent)break;evnt(5);}while(r);
+if(!qbevent)break;evnt(11);}while(r);
 do{
-tqbs=qbs_new(0,0);
-qbs_print(nothingstring,1);
-skip1:
-qbs_free(tqbs);
+sub_shell(qbs_new_txt_len("sed -i 's/#en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen",53),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(7);}while(r);
+if(!qbevent)break;evnt(13);}while(r);
+do{
+sub_shell(qbs_new_txt_len("locale-gen",10),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(14);}while(r);
+do{
+sub_shell(qbs_new_txt_len("genfstab -U >> /etc/fstab",25),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(15);}while(r);
+do{
+sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("/temp.txt",9),NULL,0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(17);}while(r);
+do{
+tmp_fileno= 1 ;
+if (new_error) goto skip1;
+sub_file_line_input_string(tmp_fileno,__STRING_DV);
+if (new_error) goto skip1;
+skip1:
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(18);}while(r);
+do{
+sub_close( 1 ,1);
+if(!qbevent)break;evnt(19);}while(r);
+LABEL_OVER1:;
+if(qbevent){evnt(21);r=0;}
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Updating Pacman!",16));
-if (new_error) goto skip2;
-makefit(tqbs);
-qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip2:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(8);}while(r);
-do{
-sub_shell(qbs_new_txt_len("pacman -Syy > null",18),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(9);}while(r);
+if(!qbevent)break;evnt(23);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("done..",6));
-if (new_error) goto skip3;
-makefit(tqbs);
-qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip3:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(10);}while(r);
-do{
-sub_cls(NULL,NULL,0);
-if(!qbevent)break;evnt(12);}while(r);
-do{
-
-
-
-
-
-
-if(!qbevent)break;evnt(17);}while(r);
-do{
-sub_cls(NULL,NULL,0);
-if(!qbevent)break;evnt(19);}while(r);
+if(!qbevent)break;evnt(24);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Welcome to Acreetion OS!",24));
+qbs_set(tqbs,qbs_new_txt_len("Create your user account!",25));
 if (new_error) goto skip4;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -62,206 +58,264 @@ qbs_print(nothingstring,1);
 skip4:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(23);}while(r);
+if(!qbevent)break;evnt(26);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip5:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(24);}while(r);
+if(!qbevent)break;evnt(28);}while(r);
+S_13:;
+while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_NAME,qbs_new_txt_len("",0))))||new_error){
+if(qbevent){evnt(31);if(r)goto S_13;}
 do{
-tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Written By: Darren W. Clift",27));
-if (new_error) goto skip6;
-makefit(tqbs);
-qbs_print(tqbs,0);
-qbs_print(nothingstring,1);
-skip6:
-qbs_free(tqbs);
+qbs_print(qbs_new_txt_len("Your name please? ",18),0);
+qbs_input_variabletypes[1]=ISSTRING+512;
+qbs_input_variableoffsets[1]=__STRING_NAME;
+qbs_input(1,1);
+if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(25);}while(r);
+if(!qbevent)break;evnt(32);}while(r);
+dl_continue_6:;
+}
+dl_exit_6:;
+do{
+qbs_set(__STRING_FULLNAME,qbs_lcase(__STRING_NAME));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(35);}while(r);
+do{
+*__SINGLE_XX=func_instr(NULL,__STRING_FULLNAME,qbs_new_txt_len(" ",1),0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(37);}while(r);
+do{
+qbs_set(__STRING_NAME,func_mid(__STRING_FULLNAME, 1 ,qbr(*__SINGLE_XX- 1 ),1));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(39);}while(r);
+LABEL_LOOP9:;
+if(qbevent){evnt(41);r=0;}
+do{
+qbs_set(__STRING_PASS,qbs_new_txt_len("123",3));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(45);}while(r);
+do{
+qbs_set(__STRING_P2,qbs_new_txt_len("fcku",4));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(46);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("            Johnathan Spiva",27));
-if (new_error) goto skip7;
-makefit(tqbs);
-qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip7:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(26);}while(r);
+if(!qbevent)break;evnt(48);}while(r);
+S_22:;
+while((qbs_cleanup(qbs_tmp_base,qbs_notequal(__STRING_PASS,__STRING_P2)))||new_error){
+if(qbevent){evnt(49);if(r)goto S_22;}
 do{
-tqbs=qbs_new(0,0);
-qbs_print(nothingstring,1);
-skip8:
-qbs_free(tqbs);
+qbs_print(qbs_new_txt_len("Password: ",10),0);
+qbs_input_variabletypes[1]=ISSTRING+512;
+qbs_input_variableoffsets[1]=__STRING_PASS;
+qbs_input(1,1);
+if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(27);}while(r);
+if(!qbevent)break;evnt(51);}while(r);
+do{
+qbs_print(qbs_new_txt_len("Verify Password: ",17),0);
+qbs_input_variabletypes[1]=ISSTRING+512;
+qbs_input_variableoffsets[1]=__STRING_P2;
+qbs_input(1,1);
+if (stop_program) end();
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(53);}while(r);
+dl_continue_8:;
+}
+dl_exit_8:;
+LABEL_JUMP2:;
+if(qbevent){evnt(57);r=0;}
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Copyright (c) 2024",18));
-if (new_error) goto skip9;
-makefit(tqbs);
-qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip9:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(28);}while(r);
+if(!qbevent)break;evnt(59);}while(r);
 do{
 tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_add(qbs_add(qbs_new_txt_len("Use ",4),__STRING_NAME),qbs_new_txt_len(" as your username?  (Y/n): ",27)));
+if (new_error) goto skip10;
+makefit(tqbs);
+qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip10:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(29);}while(r);
-LABEL_ER1:;
-if(qbevent){evnt(34);r=0;}
-do{
-sub_shell(qbs_new_txt_len("lsblk -Sr > temp.txt",20),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(38);}while(r);
-do{
-sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("temp.txt",8),NULL,0);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(40);}while(r);
-do{
-*__SINGLE_TT= 0 ;
-if(!qbevent)break;evnt(45);}while(r);
-S_20:;
-while((~(func_eof( 1 )))||new_error){
-if(qbevent){evnt(47);if(r)goto S_20;}
-do{
-*__SINGLE_TT=*__SINGLE_TT+ 1 ;
-if(!qbevent)break;evnt(49);}while(r);
-do{
-tmp_fileno= 1 ;
-if (new_error) goto skip12;
-sub_file_line_input_string(tmp_fileno,((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_TT))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])));
-if (new_error) goto skip12;
-skip12:
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(50);}while(r);
-ww_continue_11:;
-}
-ww_exit_11:;
-do{
-sub_close( 1 ,1);
-if(!qbevent)break;evnt(54);}while(r);
-S_25:;
-fornext_value14= 1 ;
-fornext_finalvalue14=*__SINGLE_TT;
-fornext_step14= 1 ;
-if (fornext_step14<0) fornext_step_negative14=1; else fornext_step_negative14=0;
-if (new_error) goto fornext_error14;
-goto fornext_entrylabel14;
-while(1){
-fornext_value14=fornext_step14+(*__SINGLE_LP2);
-fornext_entrylabel14:
-*__SINGLE_LP2=fornext_value14;
-if (fornext_step_negative14){
-if (fornext_value14<fornext_finalvalue14) break;
-}else{
-if (fornext_value14>fornext_finalvalue14) break;
-}
-fornext_error14:;
-if(qbevent){evnt(58);if(r)goto S_25;}
-do{
-tmp_long=array_check((qbr(*__SINGLE_LP2))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5]);
-if (!new_error) qbs_set( ((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[tmp_long])),func_mid(((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_LP2))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])), 1 , 3 ,1));
-qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(60);}while(r);
 do{
-
-tmp_long=array_check((qbr(*__SINGLE_LP2))-__ARRAY_STRING_DRV2[4],__ARRAY_STRING_DRV2[5]);
-if (!new_error) qbs_set( ((qbs*)(((uint64*)(__ARRAY_STRING_DRV2[0]))[tmp_long])),((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_LP2))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])));
+qbs_input_variabletypes[1]=ISSTRING+512;
+qbs_input_variableoffsets[1]=__STRING_AA;
+qbs_input(1,1);
+if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(61);}while(r);
-fornext_continue_13:;
-}
-fornext_exit_13:;
+if(!qbevent)break;evnt(62);}while(r);
+S_29:;
+if ((qbs_cleanup(qbs_tmp_base,(qbs_equal(__STRING_AA,qbs_new_txt_len("n",1)))|(qbs_equal(__STRING_AA,qbs_new_txt_len("N",1)))))||new_error){
+if(qbevent){evnt(64);if(r)goto S_29;}
 do{
-sub_shell(qbs_new_txt_len("lsblk -Nr > temp.txt",20),1);
+tqbs=qbs_new(0,0);
+qbs_print(nothingstring,1);
+skip11:
+qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(65);}while(r);
+if(!qbevent)break;evnt(66);}while(r);
 do{
-sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("temp.txt",8),NULL,0);
+qbs_print(qbs_new_txt_len("Username: ",10),0);
+qbs_input_variabletypes[1]=ISSTRING+512;
+qbs_input_variableoffsets[1]=__STRING_NAME;
+qbs_input(1,1);
+if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(67);}while(r);
-do{
-*__SINGLE_TT= 0 ;
-if(!qbevent)break;evnt(72);}while(r);
 S_32:;
-while((~(func_eof( 1 )))||new_error){
-if(qbevent){evnt(74);if(r)goto S_32;}
+if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_NAME,qbs_new_txt_len("",0))))||new_error){
+if(qbevent){evnt(68);if(r)goto S_32;}
 do{
-*__SINGLE_TT=*__SINGLE_TT+ 1 ;
-if(!qbevent)break;evnt(76);}while(r);
-do{
-tmp_fileno= 1 ;
-if (new_error) goto skip16;
-sub_file_line_input_string(tmp_fileno,((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_TT))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])));
-if (new_error) goto skip16;
-skip16:
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("Cant be blank, sorry!",21));
+if (new_error) goto skip12;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip12:
+qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(77);}while(r);
-ww_continue_15:;
+if(!qbevent)break;evnt(69);}while(r);
+do{
+goto LABEL_OVER1;
+if(!qbevent)break;evnt(70);}while(r);
 }
-ww_exit_15:;
-do{
-sub_close( 1 ,1);
-if(!qbevent)break;evnt(81);}while(r);
-do{
-*__SINGLE_LP2=*__SINGLE_LP2- 1 ;
-if(!qbevent)break;evnt(83);}while(r);
-S_38:;
-fornext_value18= 1 ;
-fornext_finalvalue18=*__SINGLE_TT;
-fornext_step18= 1 ;
-if (fornext_step18<0) fornext_step_negative18=1; else fornext_step_negative18=0;
-if (new_error) goto fornext_error18;
-goto fornext_entrylabel18;
-while(1){
-fornext_value18=fornext_step18+(*__SINGLE_T);
-fornext_entrylabel18:
-*__SINGLE_T=fornext_value18;
-if (fornext_step_negative18){
-if (fornext_value18<fornext_finalvalue18) break;
-}else{
-if (fornext_value18>fornext_finalvalue18) break;
 }
-fornext_error18:;
-if(qbevent){evnt(86);if(r)goto S_38;}
 do{
-tmp_long=array_check((qbr(*__SINGLE_T+*__SINGLE_LP2))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5]);
-if (!new_error) qbs_set( ((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[tmp_long])),qbs_left(((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_T))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])), 7 ));
+tqbs=qbs_new(0,0);
+qbs_print(nothingstring,1);
+skip13:
+qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(88);}while(r);
+if(!qbevent)break;evnt(74);}while(r);
 do{
-tmp_long=array_check((qbr(*__SINGLE_T+*__SINGLE_LP2))-__ARRAY_STRING_DRV2[4],__ARRAY_STRING_DRV2[5]);
-if (!new_error) qbs_set( ((qbs*)(((uint64*)(__ARRAY_STRING_DRV2[0]))[tmp_long])),((qbs*)(((uint64*)(__ARRAY_STRING_DR[0]))[array_check((qbr(*__SINGLE_T))-__ARRAY_STRING_DR[4],__ARRAY_STRING_DR[5])])));
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("Creating User Account: ",23));
+if (new_error) goto skip14;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_set(tqbs,__STRING_NAME);
+if (new_error) goto skip14;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip14:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(75);}while(r);
+do{
+sub_shell(qbs_add(qbs_add(qbs_add(qbs_add(qbs_add(qbs_add(qbs_new_txt_len("useradd ",8),__STRING_NAME),qbs_new_txt_len(" -b /home/",10)),__STRING_NAME),qbs_new_txt_len(" -p ",4)),__STRING_PASS),qbs_new_txt_len(" -G wheel",9)),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(80);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(qbs_new_txt_len("mkdir /home/",12),__STRING_NAME));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(85);}while(r);
+do{
+qbs_set(__STRING_BB,__STRING_XX);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(87);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Documents",10)));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(89);}while(r);
-fornext_continue_17:;
-}
-fornext_exit_17:;
 do{
-*__SINGLE_TOTAL=*__SINGLE_LP2+*__SINGLE_T- 1 ;
-if(!qbevent)break;evnt(92);}while(r);
+sub_shell(__STRING_XX,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(90);}while(r);
 do{
-sub_shell(qbs_new_txt_len("rm temp.txt",11),1);
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,__STRING_XX);
+if (new_error) goto skip15;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip15:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(91);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Templates",10)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(93);}while(r);
+do{
+sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(94);}while(r);
-LABEL_LOOP99:;
-if(qbevent){evnt(96);r=0;}
 do{
-sub_cls(NULL,NULL,0);
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,__STRING_XX);
+if (new_error) goto skip16;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip16:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(95);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Downloads",10)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(97);}while(r);
+do{
+sub_shell(__STRING_XX,1);
+qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(98);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Choose Drive to install Acreetion OS on",39));
+qbs_set(tqbs,__STRING_XX);
+if (new_error) goto skip17;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip17:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(99);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Videos",7)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(101);}while(r);
+do{
+sub_shell(__STRING_XX,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(102);}while(r);
+do{
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,__STRING_XX);
+if (new_error) goto skip18;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip18:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(103);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Pictures",9)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(105);}while(r);
+do{
+sub_shell(__STRING_XX,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(106);}while(r);
+do{
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,__STRING_XX);
 if (new_error) goto skip19;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -269,10 +323,18 @@ qbs_print(nothingstring,1);
 skip19:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(100);}while(r);
+if(!qbevent)break;evnt(107);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Public",7)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(108);}while(r);
+do{
+sub_shell(__STRING_XX,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(109);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("**WARNING**: All Data On drive will be destroyed!",49));
+qbs_set(tqbs,__STRING_XX);
 if (new_error) goto skip20;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -280,10 +342,18 @@ qbs_print(nothingstring,1);
 skip20:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(101);}while(r);
+if(!qbevent)break;evnt(110);}while(r);
+do{
+qbs_set(__STRING_XX,qbs_add(__STRING_BB,qbs_new_txt_len("/Desktop",8)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(112);}while(r);
+do{
+sub_shell(__STRING_XX,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(113);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_new_txt_len("Including Windows!!!!",21));
+qbs_set(tqbs,__STRING_XX);
 if (new_error) goto skip21;
 makefit(tqbs);
 qbs_print(tqbs,0);
@@ -291,108 +361,223 @@ qbs_print(nothingstring,1);
 skip21:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(102);}while(r);
+if(!qbevent)break;evnt(114);}while(r);
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip22:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(103);}while(r);
+if(!qbevent)break;evnt(116);}while(r);
 do{
 tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("Adding user to system now, including wheel group for SUDO powers.",65));
+if (new_error) goto skip23;
+makefit(tqbs);
+qbs_print(tqbs,0);
 qbs_print(nothingstring,1);
 skip23:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(104);}while(r);
-S_50:;
-fornext_value25= 1 ;
-fornext_finalvalue25=*__SINGLE_TOTAL;
-fornext_step25= 1 ;
-if (fornext_step25<0) fornext_step_negative25=1; else fornext_step_negative25=0;
-if (new_error) goto fornext_error25;
-goto fornext_entrylabel25;
-while(1){
-fornext_value25=fornext_step25+(*__SINGLE_XX);
-fornext_entrylabel25:
-*__SINGLE_XX=fornext_value25;
-if (fornext_step_negative25){
-if (fornext_value25<fornext_finalvalue25) break;
-}else{
-if (fornext_value25>fornext_finalvalue25) break;
-}
-fornext_error25:;
-if(qbevent){evnt(106);if(r)goto S_50;}
+if(!qbevent)break;evnt(117);}while(r);
 do{
 tqbs=qbs_new(0,0);
-qbs_set(tqbs,qbs_add(qbs_add(qbs_str((float)(*__SINGLE_XX)),qbs_new_txt_len("- ",2)),((qbs*)(((uint64*)(__ARRAY_STRING_DRV2[0]))[array_check((qbr(*__SINGLE_XX))-__ARRAY_STRING_DRV2[4],__ARRAY_STRING_DRV2[5])]))));
-if (new_error) goto skip26;
-makefit(tqbs);
-qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip24:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(118);}while(r);
+do{
+sub_shell(qbs_new_txt_len("sed 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8'",44),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(124);}while(r);
+do{
+sub_shell(qbs_new_txt_len("sed 's/#en_US ISO-8859-1/en_US ISO-8859-1'",42),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(125);}while(r);
+do{
+sub_shell(qbs_new_txt_len("locale-gen",10),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(126);}while(r);
+do{
+sub_shell(qbs_new_txt_len("echo 'LANG=en_US.UTF-8' > /etc/locale.conf",42),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(127);}while(r);
+do{
+sub_shell(qbs_new_txt_len("echo 'LANG=en_US ISO-8859-1' >> /etc/locale.conf",48),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(128);}while(r);
+do{
+sub_shell(qbs_new_txt_len("echo 'LANG=en_US ISO-8859-1' >> /etc/locale.conf",48),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(129);}while(r);
+do{
+qbs_set(__STRING_AA,qbs_new_txt_len("",0));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(133);}while(r);
+S_73:;
+while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_AA,qbs_new_txt_len("",0))))||new_error){
+if(qbevent){evnt(135);if(r)goto S_73;}
+do{
+tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
 skip26:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(108);}while(r);
-fornext_continue_24:;
-}
-fornext_exit_24:;
+if(!qbevent)break;evnt(137);}while(r);
 do{
-tqbs=qbs_new(0,0);
-qbs_print(nothingstring,1);
-skip27:
-qbs_free(tqbs);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(112);}while(r);
-S_54:;
-while(((-(*__SINGLE_SE< 1 ))|(-(((float)(*__SINGLE_SE))>((float)(*__SINGLE_TOTAL)))))||new_error){
-if(qbevent){evnt(114);if(r)goto S_54;}
-do{
-qbs_print(qbs_new_txt_len("Which Drive: ",13),0);
+qbs_print(qbs_new_txt_len("Host name: ",11),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
 qbs_input_variableoffsets[1]=__STRING_AA;
 qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(116);}while(r);
-do{
-*__SINGLE_SE=func_val(__STRING_AA);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(117);}while(r);
-dl_continue_28:;
+if(!qbevent)break;evnt(138);}while(r);
+dl_continue_25:;
 }
-dl_exit_28:;
+dl_exit_25:;
 do{
-qbs_set(__STRING_DV,((qbs*)(((uint64*)(__ARRAY_STRING_DRV[0]))[array_check((qbr(*__SINGLE_SE))-__ARRAY_STRING_DRV[4],__ARRAY_STRING_DRV[5])])));
+sub_shell(qbs_add(qbs_add(qbs_new_txt_len("echo ",5),__STRING_AA),qbs_new_txt_len(" > /etc/hostname",16)),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(121);}while(r);
+if(!qbevent)break;evnt(142);}while(r);
 do{
-tqbs=qbs_new(0,0);
-qbs_print(nothingstring,1);
+sub_shell(__STRING_XX,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(153);}while(r);
+do{
+sub_shell(qbs_new_txt_len("pacman -S grub efibootmgr dosfstools os-prober mtools --noconfirm",65),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(156);}while(r);
+do{
+sub_shell(qbs_new_txt_len("mkinitcpio -P",13),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(166);}while(r);
+do{
+sub_shell(qbs_new_txt_len("bootctl install",15),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(167);}while(r);
+do{
+sub_shell(qbs_add(qbs_add(qbs_new_txt_len("blkid > /tem.txt | grep -i ",27),__STRING_DV),qbs_new_txt_len("2",1)),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(175);}while(r);
+do{
+sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("/tem.txt",8),NULL,0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(178);}while(r);
+do{
+tmp_fileno= 1 ;
+if (new_error) goto skip27;
+sub_file_line_input_string(tmp_fileno,__STRING_DD);
+if (new_error) goto skip27;
+skip27:
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(179);}while(r);
+do{
+sub_close( 1 ,1);
+if(!qbevent)break;evnt(180);}while(r);
+do{
+sub_shell(qbs_new_txt_len("rm /tem.txt",11),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(181);}while(r);
+do{
+*__SINGLE_II=func_instr(NULL,__STRING_DD,qbs_new_txt_len("PARTUUID=",9),0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(185);}while(r);
+do{
+qbs_set(__STRING_DD,func_mid(__STRING_DD,qbr(*__SINGLE_II),__STRING_DD->len,1));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(187);}while(r);
+do{
+sub_open_gwbasic(qbs_new_txt_len("o",1), 1 ,qbs_new_txt_len("/boot/loader/entries/linux-zen.conf",35),NULL,0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(190);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip29;
+sub_file_print(tmp_fileno,qbs_new_txt_len("## Acreetion OS boot",20), 0 , 0 , 1 );
+if (new_error) goto skip29;
 skip29:
-qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(123);}while(r);
-S_60:;
-while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_II,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(124);if(r)goto S_60;}
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(192);}while(r);
 do{
-qbs_print(qbs_new_txt_len("Type Full Yes or No!   Are you 100 percent Sure? (Yes/No): ",59),0);
-qbs_input_variabletypes[1]=ISSTRING+512;
-qbs_input_variableoffsets[1]=__STRING_II;
-qbs_input(1,1);
-if (stop_program) end();
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip30;
+sub_file_print(tmp_fileno,qbs_new_txt_len("Title     Acreetion OS",22), 0 , 0 , 1 );
+if (new_error) goto skip30;
+skip30:
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(125);}while(r);
-dl_continue_30:;
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(193);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip31;
+sub_file_print(tmp_fileno,qbs_new_txt_len("linux     /vmlinuz-linux-zen",28), 0 , 0 , 1 );
+if (new_error) goto skip31;
+skip31:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(194);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip32;
+sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /initramfs-linux-zen.img",34), 0 , 0 , 1 );
+if (new_error) goto skip32;
+skip32:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(195);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip33;
+sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /amd-ucode.img",24), 0 , 0 , 1 );
+if (new_error) goto skip33;
+skip33:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(196);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip34;
+sub_file_print(tmp_fileno,qbs_add(qbs_add(qbs_new_txt_len("Options   root=",15),__STRING_DD),qbs_new_txt_len(" zswap.enabled=0 rw rootfstype=ext4 enable_psr=0",48)), 0 , 0 , 1 );
+if (new_error) goto skip34;
+skip34:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(197);}while(r);
+do{
+sub_close( 1 ,1);
+if(!qbevent)break;evnt(199);}while(r);
+do{
+if (sub_gl_called) error(271);
+close_program=1;
+end();
+if(!qbevent)break;evnt(204);}while(r);
+sub_end();
+return;
 }
-dl_exit_30:;
-do{
-qbs_set(__STRING_II,qbs_lcase(__STRING_II));
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(128);}while(r);
-S_64:;
-if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_II,qbs_new_txt_len("no",2))))||new_error){
-if(qbevent){evnt(130);if(r)goto S_64;}
-do{
+void SUB_VWATCH(){
+qbs *tqbs;
+ptrszint tmp_long;
+int32 tmp_fileno;
+uint32 qbs_tmp_base=qbs_tmp_list_nexti;
+uint8 *tmp_mem_static_pointer=mem_static_pointer;
+uint32 tmp_cmem_sp=cmem_sp;
+#include "data1.txt"
+mem_lock *sf_mem_lock;
+new_mem_lock();
+sf_mem_lock=mem_lock_tmp;
+sf_mem_lock->type=3;
+if (new_error) goto exit_subfunc;
+exit_subfunc:;
+free_mem_lock(sf_mem_lock);
+#include "free1.txt"
+if ((tmp_mem_static_pointer>=mem_static)&&(tmp_mem_static_pointer<=mem_static_limit)) mem_static_pointer=tmp_mem_static_pointer; else mem_static_pointer=mem_static;
+cmem_sp=tmp_cmem_sp;
+}

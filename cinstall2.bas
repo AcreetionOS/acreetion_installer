@@ -148,7 +148,7 @@ Rem Shell xx$
 Rem Print "mounting: "; xx$
 
 
-xx$ = "parted /dev/" + dv$ + " set 1 boot on"
+Rem xx$ = "parted /dev/" + dv$ + "1 set 1 boot on set 1 esp on n"
 
 Shell xx$
 Rem Print "parted: "; xx$
