@@ -14,10 +14,6 @@ sub_shell(qbs_new_txt_len("locale-gen",10),1);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(14);}while(r);
 do{
-sub_shell(qbs_new_txt_len("genfstab -U >> /etc/fstab",25),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(15);}while(r);
-do{
 sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("/temp.txt",9),NULL,0);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(17);}while(r);
@@ -66,9 +62,9 @@ skip5:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(28);}while(r);
-S_13:;
+S_12:;
 while((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_NAME,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(31);if(r)goto S_13;}
+if(qbevent){evnt(31);if(r)goto S_12;}
 do{
 qbs_print(qbs_new_txt_len("Your name please? ",18),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -109,9 +105,9 @@ skip7:
 qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(48);}while(r);
-S_22:;
+S_21:;
 while((qbs_cleanup(qbs_tmp_base,qbs_notequal(__STRING_PASS,__STRING_P2)))||new_error){
-if(qbevent){evnt(49);if(r)goto S_22;}
+if(qbevent){evnt(49);if(r)goto S_21;}
 do{
 qbs_print(qbs_new_txt_len("Password: ",10),0);
 qbs_input_variabletypes[1]=ISSTRING+512;
@@ -158,9 +154,9 @@ qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(62);}while(r);
-S_29:;
+S_28:;
 if ((qbs_cleanup(qbs_tmp_base,(qbs_equal(__STRING_AA,qbs_new_txt_len("n",1)))|(qbs_equal(__STRING_AA,qbs_new_txt_len("N",1)))))||new_error){
-if(qbevent){evnt(64);if(r)goto S_29;}
+if(qbevent){evnt(64);if(r)goto S_28;}
 do{
 tqbs=qbs_new(0,0);
 qbs_print(nothingstring,1);
@@ -176,9 +172,9 @@ qbs_input(1,1);
 if (stop_program) end();
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(67);}while(r);
-S_32:;
+S_31:;
 if ((qbs_cleanup(qbs_tmp_base,qbs_equal(__STRING_NAME,qbs_new_txt_len("",0))))||new_error){
-if(qbevent){evnt(68);if(r)goto S_32;}
+if(qbevent){evnt(68);if(r)goto S_31;}
 do{
 tqbs=qbs_new(0,0);
 qbs_set(tqbs,qbs_new_txt_len("Cant be blank, sorry!",21));
@@ -225,6 +221,10 @@ do{
 qbs_set(__STRING_XX,qbs_add(qbs_new_txt_len("mkdir /home/",12),__STRING_NAME));
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(85);}while(r);
+do{
+sub_shell(__STRING_XX,1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(86);}while(r);
 do{
 qbs_set(__STRING_BB,__STRING_XX);
 qbs_cleanup(qbs_tmp_base,0);
@@ -441,124 +441,178 @@ sub_shell(qbs_add(qbs_add(qbs_new_txt_len("echo ",5),__STRING_AA),qbs_new_txt_le
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(142);}while(r);
 do{
+qbs_set(__STRING_XX,qbs_add(qbs_add(qbs_new_txt_len("mount /dev/",11),__STRING_DV),qbs_new_txt_len("1 /boot",7)));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(146);}while(r);
+do{
 sub_shell(__STRING_XX,1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(153);}while(r);
+if(!qbevent)break;evnt(147);}while(r);
+do{
+tqbs=qbs_new(0,0);
+qbs_set(tqbs,qbs_new_txt_len("mounting: ",10));
+if (new_error) goto skip27;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_set(tqbs,__STRING_XX);
+if (new_error) goto skip27;
+makefit(tqbs);
+qbs_print(tqbs,0);
+qbs_print(nothingstring,1);
+skip27:
+qbs_free(tqbs);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(148);}while(r);
+do{
+sub_shell(qbs_new_txt_len("pacman -S base-devel nano dhcpcd abiword adobe-source-code-pro-fonts adobe-source-sans-fonts adobe-source-serif-fonts alsa-firmware alsa-plugins alsa-utils amd-ucode android-tools android-udev appstream appstream-glib appstream-qt appstream-qt5 arc-gtk-theme arc-icon-theme arc-solid-gtk-theme arch-install-scripts archinstall arch-audit archiso archivetools archlinux-appstream-data archlinux-contrib archlinux-keyring archlinux-wallpaper ardour aria2 aspell audacity axel b43-fwcutter base base-devel bash bash-completion bcachefs-tools bind bison bitwarden blender blueberry bluefish bluez bluez-utils bolt breeze-gtk breeze-icons brltty broadcom-wl #broadwell-wl-dkms btrfs-progs calamares calibre cantarell-fonts cheese chromium cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cinnamon-translations ckbcomp clamav clamtk clonezilla cloud-init coreutils cpio cryptsetup #cuda #cuda-tools cups cups-browsed cups-filters cups-pdf cups-pk-helper curl curl-rustls darkhttpd darktable dart dbus dbus-docs dbus-glib dbxtool dconf dconf-editor ddgr ddrescue deja-dup deluge-gtk desktop-file-utils device-mapper dhclient dhcpcd dialog diffutils directx-headers discord distrobox dmidecode dmraid dnsmasq docker docker-buildx docker-compose docker-machine docker-scan downgrade dosfstools dracut duf e2fsprogs exfatprogs edk2-shell efibootmgr efitools element-desktop emacs-wayland endeavouros-mirrorlist endeavouros-keyring epiphany espeakup ethtool exfatprogs f2fs-tools fakeroot fastfetch fatresize ffmpeg ffmpegthumbs firewalld freetype2 nemo-terminal file-roller filezilla flatpak flatpak-builder flatpak-docs flatpak-xdg-utils font-manager foot-terminfo fsarchiver fuse2 fuse3 fwupd fwupd-docs fwupd-efi gamemode gcc gcc-libs gdm gedit gedit-plugins gimp gimp-nufraw gimp-plugin-gmic git glances gnome-keyring gnome-screenshot gnome-shell gnu-netcat gpart gparted gpm gptfdisk grml-zsh-config grub grsync gsfonts gst-libav gst-plugin-pipewire gst-plugins-bad gst-plugins-ugly gtk3 gtk4 gtkspell guake guvcview handbrake haveged hdparm hwdata hwdetect hwinfo hyperv ifuse img2pdf inetutils intel-compute-runtime intel-gmmlib intel-graphics-compiler intel-graphics-compiler intel-media-driver intel-ucode intel-undervolt inxi iptables-nft irssi iw iwd jdk17-openjdk jfsutils jre-openjdk jre21-openjdk kitty kitty-terminfo kodi ldns leafpad less lftp libadwaita libadwaita-docs libdvdcss libfido2 libgsf libopenraw libsmbios libusb-compat libva-intel-driver libva-mesa-driver libva-utils libva-vdpau-driver libvirt libvirt-glib linux-atm linux-firmware linux-firmware-marvell linux-zen-docs livecd-sounds llvm logrotate lsb-release lsscsi lvm2 lynx lz4 man-db man-pages metacity mc mdadm meld memtest86+ memtest86+-efi mesa mesa-utils mesa-vdpau meson mkinitcpio mkinitcpio-archiso mkinitcpio-nfs-utils mlocate modemmanager mtools nano nano-syntax-highlighting nemo-emblems nemo-fileroller nemo-pastebin nemo-preview nemo-python nemo-qml-plugin-configuration nemo-qml-plugin-notifications nemo-seahorse nemo-share networkmanager networkmanager-openconnect networkmanager-openvpn nextcloud nextcloud-app-bookmarks nextcloud-app-calendar nextcloud-app-contacts nextcloud-app-deck nextcloud-app-mail nextcloud-app-news nextcloud-app-notes nextcloud-app-notify_push nextcloud-app-spreed nextcloud-app-tasks nextcloud-client nbd ndisc6 net-tools netctl nfs-utils nftables nilfs-utils nmap noto-fonts noto-fonts-emoji noto-fonts-extra npm nss-mdns ntfs-3g ntp nvidia nvidia-inst nvidia-utils nvme-cli open-iscsi open-vm-tools openconnect openh264 openpgp-card-tools openimagedenoise openssh openssl openvpn os-prober pacman-contrib partclone parted partimage partitionmanager pavucontrol pcsclite pdfgrep perl nemo-image-converter persepolis pipewire pipewire-alsa pipewire-audio pipewire-docs pipewire-ffado pipewire-jack pipewire-pulse pipewire-roc pipewire-session-manager pipewire-v4l2 pipewire-x11-bell pipewire-zeroconf pkgfile podman polkit-gnome poppler-glib power-profiles-daemon ppp pptpclient psensor python-capng python-packaging python-pyqt5 pv qemu-guest-agent rate-mirrors rebuild-detector reflector reflector-simple reiserfsprogs rp-pppoe rsync rnnoise rtkit rxvt-unicode-terminfo screen screengrab sdparm sequoia-sq sg3_utils smartmontools s-nail sof-firmware spice-vdagent squashfs-tools stress-ng sudo sysfsutils syslinux system-config-printer systemd-resolvconf systemd-sysvcompat tcpdump terminus-font testdisk texinfo thermald thunderbird thunderbird-ublock-origin tldr touchegg tmux tpm2-tools tpm2-tss ttf-bitstream-vera ttf-dejavu ttf-liberation ttf-opensans udftools ukui-wallpapers unrar unzip usb_modeswitch usbmuxd usbutils vi vim vkd3d virtualbox-guest-utils vpnc vulkan-intel vulkan-mesa-layers vulkan-radeon vulkan-swrast vulkan-virtio warpinator webrtc-audio-processing welcome which wireless-regdb wireless_tools wireplumber wpa_supplicant wvdial x265 x42-plugins xdg-user-dirs xdg-utils xed xf86-input-libinput xf86-video-amdgpu xf86-video-ati xf86-video-intel xf86-video-qxl xf86-input-vmmouse xf86-video-vmware xfsprogs xl2tpd xorg-server xorg-xdpyinfo xorg-xinit xorg-xinput xorg-xkill xorg-xrandr xorg-xwayland xz yay zsh --noconfirm",5244),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(150);}while(r);
 do{
 sub_shell(qbs_new_txt_len("pacman -S grub efibootmgr dosfstools os-prober mtools --noconfirm",65),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(156);}while(r);
+if(!qbevent)break;evnt(157);}while(r);
 do{
 sub_shell(qbs_new_txt_len("mkinitcpio -P",13),1);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(166);}while(r);
+if(!qbevent)break;evnt(158);}while(r);
 do{
-sub_shell(qbs_new_txt_len("bootctl install",15),1);
+sub_shell(qbs_new_txt_len("mkdir /boot/EFI",15),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(160);}while(r);
+do{
+sub_shell(qbs_add(qbs_add(qbs_new_txt_len("mount /dev/",11),__STRING_DV),qbs_new_txt_len("1 /boot/",8)),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(161);}while(r);
+do{
+sub_shell(qbs_new_txt_len("grub-install --target=x86_64-efi --bootloader-id=grub_uefi --recheck",68),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(162);}while(r);
+do{
+sub_shell(qbs_new_txt_len("cp /usr/share/locale/en\\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo",73),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(163);}while(r);
+do{
+sub_shell(qbs_new_txt_len("grub-mkconfig -o /boot/grub/grub.cfg",36),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(165);}while(r);
+do{
+tqbs=qbs_new(0,0);
+qbs_print(nothingstring,1);
+skip28:
+qbs_free(tqbs);
 qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(167);}while(r);
 do{
-sub_shell(qbs_add(qbs_add(qbs_new_txt_len("blkid > /tem.txt | grep -i ",27),__STRING_DV),qbs_new_txt_len("2",1)),1);
+sub_chdir(qbs_new_txt_len("/etc/systemd/system/",20));
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(175);}while(r);
+if(!qbevent)break;evnt(173);}while(r);
+do{
+sub_shell(qbs_new_txt_len("systemctl enable NetworkManager",31),1);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(174);}while(r);
+do{
+sub_chdir(qbs_new_txt_len("/",1));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(176);}while(r);
 do{
 sub_open_gwbasic(qbs_new_txt_len("i",1), 1 ,qbs_new_txt_len("/tem.txt",8),NULL,0);
 qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(178);}while(r);
-do{
-tmp_fileno= 1 ;
-if (new_error) goto skip27;
-sub_file_line_input_string(tmp_fileno,__STRING_DD);
-if (new_error) goto skip27;
-skip27:
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(179);}while(r);
-do{
-sub_close( 1 ,1);
-if(!qbevent)break;evnt(180);}while(r);
-do{
-sub_shell(qbs_new_txt_len("rm /tem.txt",11),1);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(181);}while(r);
-do{
-*__SINGLE_II=func_instr(NULL,__STRING_DD,qbs_new_txt_len("PARTUUID=",9),0);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(185);}while(r);
-do{
-qbs_set(__STRING_DD,func_mid(__STRING_DD,qbr(*__SINGLE_II),__STRING_DD->len,1));
-qbs_cleanup(qbs_tmp_base,0);
 if(!qbevent)break;evnt(187);}while(r);
 do{
-sub_open_gwbasic(qbs_new_txt_len("o",1), 1 ,qbs_new_txt_len("/boot/loader/entries/linux-zen.conf",35),NULL,0);
-qbs_cleanup(qbs_tmp_base,0);
-if(!qbevent)break;evnt(190);}while(r);
-do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
+tmp_fileno= 1 ;
 if (new_error) goto skip29;
-sub_file_print(tmp_fileno,qbs_new_txt_len("## Acreetion OS boot",20), 0 , 0 , 1 );
+sub_file_line_input_string(tmp_fileno,__STRING_DD);
 if (new_error) goto skip29;
 skip29:
 qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
-if(!qbevent)break;evnt(192);}while(r);
+if(!qbevent)break;evnt(188);}while(r);
 do{
-tab_spc_cr_size=2;
-tab_fileno=tmp_fileno= 1 ;
-if (new_error) goto skip30;
-sub_file_print(tmp_fileno,qbs_new_txt_len("Title     Acreetion OS",22), 0 , 0 , 1 );
-if (new_error) goto skip30;
-skip30:
+sub_close( 1 ,1);
+if(!qbevent)break;evnt(189);}while(r);
+do{
+sub_shell(qbs_new_txt_len("rm /tem.txt",11),1);
 qbs_cleanup(qbs_tmp_base,0);
-tab_spc_cr_size=1;
-if(!qbevent)break;evnt(193);}while(r);
+if(!qbevent)break;evnt(190);}while(r);
+do{
+*__SINGLE_II=func_instr(NULL,__STRING_DD,qbs_new_txt_len("PARTUUID=",9),0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(194);}while(r);
+do{
+qbs_set(__STRING_DD,func_mid(__STRING_DD,qbr(*__SINGLE_II+ 1 ),__STRING_DD->len- 1 ,1));
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(196);}while(r);
+do{
+sub_open_gwbasic(qbs_new_txt_len("o",1), 1 ,qbs_new_txt_len("/boot/loader/entries/linux-zen.conf",35),NULL,0);
+qbs_cleanup(qbs_tmp_base,0);
+if(!qbevent)break;evnt(199);}while(r);
 do{
 tab_spc_cr_size=2;
 tab_fileno=tmp_fileno= 1 ;
 if (new_error) goto skip31;
-sub_file_print(tmp_fileno,qbs_new_txt_len("linux     /vmlinuz-linux-zen",28), 0 , 0 , 1 );
+sub_file_print(tmp_fileno,qbs_new_txt_len("## Acreetion OS boot",20), 0 , 0 , 1 );
 if (new_error) goto skip31;
 skip31:
 qbs_cleanup(qbs_tmp_base,0);
 tab_spc_cr_size=1;
-if(!qbevent)break;evnt(194);}while(r);
+if(!qbevent)break;evnt(201);}while(r);
 do{
 tab_spc_cr_size=2;
 tab_fileno=tmp_fileno= 1 ;
 if (new_error) goto skip32;
-sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /initramfs-linux-zen.img",34), 0 , 0 , 1 );
+sub_file_print(tmp_fileno,qbs_new_txt_len("Title     Acreetion OS",22), 0 , 0 , 1 );
 if (new_error) goto skip32;
 skip32:
 qbs_cleanup(qbs_tmp_base,0);
 tab_spc_cr_size=1;
-if(!qbevent)break;evnt(195);}while(r);
+if(!qbevent)break;evnt(202);}while(r);
 do{
 tab_spc_cr_size=2;
 tab_fileno=tmp_fileno= 1 ;
 if (new_error) goto skip33;
-sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /amd-ucode.img",24), 0 , 0 , 1 );
+sub_file_print(tmp_fileno,qbs_new_txt_len("linux     /vmlinuz-linux",24), 0 , 0 , 1 );
 if (new_error) goto skip33;
 skip33:
 qbs_cleanup(qbs_tmp_base,0);
 tab_spc_cr_size=1;
-if(!qbevent)break;evnt(196);}while(r);
+if(!qbevent)break;evnt(203);}while(r);
 do{
 tab_spc_cr_size=2;
 tab_fileno=tmp_fileno= 1 ;
 if (new_error) goto skip34;
-sub_file_print(tmp_fileno,qbs_add(qbs_add(qbs_new_txt_len("Options   root=",15),__STRING_DD),qbs_new_txt_len(" zswap.enabled=0 rw rootfstype=ext4 enable_psr=0",48)), 0 , 0 , 1 );
+sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /initramfs-linux.img",30), 0 , 0 , 1 );
 if (new_error) goto skip34;
 skip34:
 qbs_cleanup(qbs_tmp_base,0);
 tab_spc_cr_size=1;
-if(!qbevent)break;evnt(197);}while(r);
+if(!qbevent)break;evnt(204);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip35;
+sub_file_print(tmp_fileno,qbs_new_txt_len("initrd    /amd-ucode.img",24), 0 , 0 , 1 );
+if (new_error) goto skip35;
+skip35:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(205);}while(r);
+do{
+tab_spc_cr_size=2;
+tab_fileno=tmp_fileno= 1 ;
+if (new_error) goto skip36;
+sub_file_print(tmp_fileno,qbs_add(qbs_add(qbs_new_txt_len("Options   root=/dev/",20),__STRING_DV),qbs_new_txt_len("2 zswap.enabled=0 rw rootfstype=ext4 enable_psr=0",49)), 0 , 0 , 1 );
+if (new_error) goto skip36;
+skip36:
+qbs_cleanup(qbs_tmp_base,0);
+tab_spc_cr_size=1;
+if(!qbevent)break;evnt(206);}while(r);
 do{
 sub_close( 1 ,1);
-if(!qbevent)break;evnt(199);}while(r);
+if(!qbevent)break;evnt(208);}while(r);
 do{
 if (sub_gl_called) error(271);
 close_program=1;
 end();
-if(!qbevent)break;evnt(204);}while(r);
+if(!qbevent)break;evnt(213);}while(r);
 sub_end();
 return;
 }

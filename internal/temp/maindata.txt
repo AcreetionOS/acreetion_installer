@@ -15,7 +15,7 @@ if(__SINGLE_II==NULL){
 __SINGLE_II=(float*)mem_static_malloc(4);
 *__SINGLE_II=0;
 }
-byte_element_struct *byte_element_28=NULL;
-if (!byte_element_28){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_28=(byte_element_struct*)(mem_static_pointer-12); else byte_element_28=(byte_element_struct*)mem_static_malloc(12);
+byte_element_struct *byte_element_30=NULL;
+if (!byte_element_30){
+if ((mem_static_pointer+=12)<mem_static_limit) byte_element_30=(byte_element_struct*)(mem_static_pointer-12); else byte_element_30=(byte_element_struct*)mem_static_malloc(12);
 }
