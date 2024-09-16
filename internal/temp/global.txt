@@ -1,3 +1,4 @@
+qbs *__STRING_XX=NULL;
 qbs *__STRING_DV=NULL;
 qbs *__STRING_NAME=NULL;
 qbs *__STRING_FULLNAME=NULL;
@@ -5,10 +6,7 @@ float *__SINGLE_XX=NULL;
 qbs *__STRING_PASS=NULL;
 qbs *__STRING_P2=NULL;
 qbs *__STRING_AA=NULL;
-qbs *__STRING_XX=NULL;
 qbs *__STRING_BB=NULL;
-qbs *__STRING_DD=NULL;
-float *__SINGLE_II=NULL;
 int32 console=1;
 int32 screen_hide_startup=1;
 int32 asserts=0;

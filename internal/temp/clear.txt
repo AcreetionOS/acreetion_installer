@@ -1,3 +1,4 @@
+__STRING_XX->len=0;
 __STRING_DV->len=0;
 __STRING_NAME->len=0;
 __STRING_FULLNAME->len=0;
@@ -5,7 +6,4 @@ __STRING_FULLNAME->len=0;
 __STRING_PASS->len=0;
 __STRING_P2->len=0;
 __STRING_AA->len=0;
-__STRING_XX->len=0;
 __STRING_BB->len=0;
-__STRING_DD->len=0;
-*__SINGLE_II=0;

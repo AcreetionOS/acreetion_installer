@@ -1,4 +1,7 @@
 pacstrap
+base
+pacman
+zone
 linux
 linuz-header
 genfsta
@@ -10,7 +13,6 @@ mtools
 os-prober
 efibootmgr
 bootctl
-zone
 localtime
 vmlinuz
 linux-firm

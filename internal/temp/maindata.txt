@@ -1,3 +1,4 @@
+if (!__STRING_XX)__STRING_XX=qbs_new(0,0);
 if (!__STRING_DV)__STRING_DV=qbs_new(0,0);
 if (!__STRING_NAME)__STRING_NAME=qbs_new(0,0);
 if (!__STRING_FULLNAME)__STRING_FULLNAME=qbs_new(0,0);
@@ -8,14 +9,4 @@ __SINGLE_XX=(float*)mem_static_malloc(4);
 if (!__STRING_PASS)__STRING_PASS=qbs_new(0,0);
 if (!__STRING_P2)__STRING_P2=qbs_new(0,0);
 if (!__STRING_AA)__STRING_AA=qbs_new(0,0);
-if (!__STRING_XX)__STRING_XX=qbs_new(0,0);
 if (!__STRING_BB)__STRING_BB=qbs_new(0,0);
-if (!__STRING_DD)__STRING_DD=qbs_new(0,0);
-if(__SINGLE_II==NULL){
-__SINGLE_II=(float*)mem_static_malloc(4);
-*__SINGLE_II=0;
-}
-byte_element_struct *byte_element_30=NULL;
-if (!byte_element_30){
-if ((mem_static_pointer+=12)<mem_static_limit) byte_element_30=(byte_element_struct*)(mem_static_pointer-12); else byte_element_30=(byte_element_struct*)mem_static_malloc(12);
-}
