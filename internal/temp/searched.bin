@@ -1,3 +1,7 @@
+networkmanager
+timezone
+time
+network
 pacstrap
 base
 pacman
@@ -13,8 +17,7 @@ mtools
 os-prober
 efibootmgr
 bootctl
-localtime
-vmlinuz
+localvmlinuz
 linux-firm
 fstab
 parted

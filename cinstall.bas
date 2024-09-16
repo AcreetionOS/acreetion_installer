@@ -241,12 +241,8 @@ Shell path2$
 
 Shell "cp /root/zone /mnt/usr/bin/"
 Shell "chmod +x /mnt/usr/bin/zone"
-
-Rem Shell "cp -av /etc/localtime /mnt/ect/"
-
-Rem make fstab file!
-
 Shell "mkdir /mnt/etc/"
+Shell "cp -av /etc/localtime /mnt/ect/"
 
 Rem Shell "cp -r /extraboot/ /mnt/"
 
